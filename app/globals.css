@@ -63,6 +63,12 @@ body {
   }
 }
 
+.circle-letter {
+  font-size: var(--font-size-xl);
+  color: rgb(var(--white));
+  @apply opacity-100;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

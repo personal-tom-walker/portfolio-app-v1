@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import ConnectedCirclesDescendingScale from './components/ConnectedCirclesDescendingScale';
+
 export default function Home() {
   const [navClick, setNavClick] = useState(false);
   const triggerNavClick = () => {
@@ -19,7 +21,9 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <main className='flex flex-col items-end min-h-screen pb-5 px-5'></main>
+      <main className='flex flex-col items-end min-h-screen pb-5 px-5'>
+        <ConnectedCirclesDescendingScale letter={'T'} />
+      </main>
       <footer className='flex justify-between pb-10 px-5'></footer>
     </>
   );
