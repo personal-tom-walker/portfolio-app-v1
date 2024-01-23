@@ -1,32 +1,105 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+
 import { CircleContentProps } from '../types';
+import { breakpoints } from '../constants/global';
+
+import Img from '../../public/profile-line-drawing-200.png';
+import DesktopImg from '../../public/profile-line-drawing-350.png';
 
 const ConnectedCirclesDescendingScale = ({
   isImg = false,
   letter,
 }: CircleContentProps) => {
-  // variations to consider:
-  // -  size(mobile v desktop)
-  //     - contents of largest circle:
-  //         - img OR letter in square OR none
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleWindowResize);
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
   return (
-    <div className='flex flex-col w-[350px]'>
-      <div className='w-64 h-64 bg-white opacity-20 rounded-full mb-[-4px]'></div>
+    <div
+      className={`flex flex-col ${
+        windowWidth < breakpoints.desktop ? 'w-[350px]' : 'w-[650px]'
+      }`}
+    >
       <div
-        className={`flex justify-center w-64 mt-[${
-          letter ? '-158px' : '0'
-        }] mb-[${letter ? '86px' : '0'}]`}
+        className={`overflow-hidden rounded-full mb-[-4px] ${
+          windowWidth < breakpoints.desktop
+            ? 'w-64 h-64'
+            : 'w-[450px] h-[450px]'
+        } ${
+          isImg
+            ? 'bg-transparent border-x border-y opacity-70'
+            : 'bg-white opacity-20'
+        }`}
       >
-        <span className='circle-letter'>{letter || ''}</span>
+        {isImg && (
+          <Image
+            src={windowWidth < breakpoints.desktop ? Img : DesktopImg}
+            alt={'profile line drawing'}
+            className={`relative m-auto ${
+              windowWidth < breakpoints.desktop ? 'mt-[15px]' : 'mt-[28px]'
+            }`}
+          />
+        )}
+      </div>
+      <div
+        className={`flex justify-center items-center w-64 ${
+          letter ? 'mt-[-183px] mb-[63px]' : ''
+        }`}
+      >
+        {letter && (
+          <div
+            className={`w-[120px] h-[120px] ${
+              letter ? 'border-x border-y border-white' : ''
+            } rotate-45`}
+          >
+            <div className='w-full h-full rotate-[-45deg] flex justify-center items-center'>
+              <span className='circle-letter'>{letter}</span>
+            </div>
+          </div>
+        )}
       </div>
       <div className='flex flex-col items-end'>
-        <div className='w-16 border-b-2 border-white opacity-20 mr-[90px] mb-[12px] rotate-[50deg]'></div>
-        <div className='w-32 h-32 bg-white opacity-20 rounded-full'></div>
+        <div
+          className={`w-16 border-b-2 border-white opacity-20 mb-[12px] ${
+            windowWidth < breakpoints.desktop
+              ? 'w-16 mr-[90px] rotate-[50deg]'
+              : 'w-[132px] mr-[173px] rotate-[47deg]'
+          }`}
+        ></div>
+        <div
+          className={`bg-white opacity-20 rounded-full ${
+            windowWidth < breakpoints.desktop
+              ? 'w-32 h-32'
+              : 'w-[225px] h-[225px]'
+          }`}
+        ></div>
       </div>
       <div className='flex flex-col items-end'>
-        <div className='w-8 border-b-2 border-white opacity-20 mr-[95px] mb-[5px] rotate-[-50deg]'></div>
-        <div className='w-16 h-16 bg-white opacity-20 rounded-full mr-[109px]'></div>
+        <div
+          className={`border-b-2 border-white opacity-20 ${
+            windowWidth < breakpoints.desktop
+              ? 'w-8 rotate-[-50deg] mr-[95px] mb-[5px]'
+              : 'w-[57px] rotate-[-46deg] mr-[182px] mt-[-12px] mb-[6px]'
+          }`}
+        ></div>
+        <div
+          className={`bg-white opacity-20 rounded-full ${
+            windowWidth < breakpoints.desktop
+              ? 'w-16 h-16 mr-[109px]'
+              : 'w-[100px] h-[100px] mr-[215px]'
+          }`}
+        ></div>
       </div>
     </div>
   );
