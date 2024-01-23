@@ -3,27 +3,64 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --dark-col: 2, 14, 28;
+  --light-col: 6, 187, 223;
+  --white: 255, 255, 255;
+  --black: 0, 0, 0;
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+
+  --font-size-xs: 0.875rem;
+  --font-size-sm: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 3rem;
+
+  --font-bold: 700;
+  --font-reg: 400;
+  --font-light: 300;
+
+  --animation-transition-timing-function: cubic-bezier(0.18, 0.96, 0.78, 1);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --dark-col: 2, 14, 28;
+    --light-col: 6, 187, 223;
+    --white: 255, 255, 255;
+    --black: 0, 0, 0;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--white));
+  background: rgb(var(--dark-col));
+}
+
+.button-text {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-bold);
+  color: rgb(var(--light-col));
+  @apply uppercase text-right;
+}
+
+.button {
+  display: flex;
+}
+
+.button-line {
+  @apply h-5;
+  margin-left: -3px;
+  border-bottom: 1px solid rgb(var(--light-col));
+  transition: width 0.8s var(--animation-transition-timing-function);
+}
+
+@media (hover: hover) {
+  .button:hover .button-line {
+    @apply w-10;
+  }
 }
 
 @layer utilities {
