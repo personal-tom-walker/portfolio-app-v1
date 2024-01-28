@@ -2,7 +2,10 @@
 
 import { useState } from 'react';
 
+import { mainContentHome } from './constants/mainContent';
+
 import ConnectedCirclesDescendingScale from './components/ConnectedCirclesDescendingScale';
+import MainContent from './components/MainContent';
 
 export default function Home() {
   const [navClick, setNavClick] = useState(false);
@@ -13,7 +16,7 @@ export default function Home() {
 
   return (
     <>
-      <header className='flex pt-10 px-10 justify-end'>
+      <header className='flex pt-10 pl-10 pr-5 justify-end'>
         <div className='w-[137px]'>
           <div role='button' onClick={triggerNavClick} className='button'>
             <span className='button-text w-[100px]'>{'Projects'}</span>
@@ -21,8 +24,9 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <main className='flex flex-col items-end min-h-screen pb-5 px-5'>
+      <main className='flex flex-col items-end min-h-screen pb-4 px-8'>
         <ConnectedCirclesDescendingScale letter={'T'} />
+        <MainContent content={mainContentHome} />
       </main>
       <footer className='flex justify-between pb-10 px-5'></footer>
     </>
