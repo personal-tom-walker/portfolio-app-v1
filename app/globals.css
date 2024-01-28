@@ -35,6 +35,7 @@
 }
 
 body {
+  @apply min-h-screen;
   color: rgb(var(--white));
   background: rgb(var(--dark-col));
 }
@@ -62,16 +63,33 @@ p {
   display: flex;
 }
 
-.button-line {
-  @apply h-5;
-  margin-left: -3px;
+.button-line-horizontal {
+  @apply h-5 ml-[-3px];
   border-bottom: 1px solid rgb(var(--light-col));
   transition: width 0.8s var(--animation-transition-timing-function);
 }
 
+.button-line-vertical-short {
+  @apply mt-[20px];
+  border-left: 1px solid rgb(var(--light-col));
+  transition: height 0.8s var(--animation-transition-timing-function);
+}
+
+.button-line-vertical-long {
+  @apply mt-[20px];
+  border-left: 1px solid rgb(var(--light-col));
+  transition: height 0.8s var(--animation-transition-timing-function);
+}
+
 @media (hover: hover) {
-  .button:hover .button-line {
+  .button:hover .button-line-horizontal {
     @apply w-10;
+  }
+  .button:hover .button-line-vertical-short {
+    @apply h-5;
+  }
+  .button:hover .button-line-vertical-long {
+    @apply h-10;
   }
 }
 
