@@ -75,6 +75,12 @@ p {
   transition: height 0.8s var(--animation-transition-timing-function);
 }
 
+.button-line-vertical-short-up {
+  /* @apply mt-[-30px]; */
+  border-left: 1px solid rgb(var(--light-col));
+  transition: height 0.8s var(--animation-transition-timing-function);
+}
+
 .button-line-vertical-long {
   @apply mt-[20px];
   border-left: 1px solid rgb(var(--light-col));

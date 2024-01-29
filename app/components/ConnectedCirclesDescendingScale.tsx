@@ -27,7 +27,7 @@ const ConnectedCirclesDescendingScale = ({
 
   return (
     <div
-      className={`flex flex-col ${
+      className={`flex flex-col mr-[-20px] ${
         windowWidth < breakpoints.desktop ? 'w-[350px]' : 'w-[650px]'
       }`}
     >

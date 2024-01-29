@@ -4,6 +4,7 @@ export const breakpoints = {
 };
 
 export const buttonTypes = {
+    home: 'home',
     projects: 'projects',
     about: 'about',
     experience: 'experience',
