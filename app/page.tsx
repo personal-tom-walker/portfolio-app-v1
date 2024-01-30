@@ -18,13 +18,13 @@ export default function Home() {
   });
   const triggerNavClick = (type : string) => {
     setNavClick({ ...navClick, [type]: true });
-    router.push('about');
+    router.push(type !== buttonTypes.home ? `/${type}` : '/');
   };
 
   return (
     <>
-      <header className='flex pt-9 pl-10 pr-5 justify-end'>
-        <div className='w-[137px]'>
+      <header className='flex h-20 pt-9 pl-10 pr-5 justify-end'>
+        <div className='flex items-end w-[137px]'>
           <div
             role='button'
             onClick={() => triggerNavClick(buttonTypes.projects)}
@@ -49,7 +49,7 @@ export default function Home() {
           <MainContent content={mainContentHome} />
         </div>
       </main>
-      <footer className='absolute bottom-0 w-full h-20 flex justify-between pb-5 px-10'>
+      <footer className='w-full h-20 flex justify-between pb-5 px-10'>
         <div className='w-[100px]'>
           <div
             role='button'

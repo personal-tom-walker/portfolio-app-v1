@@ -5,7 +5,7 @@ import { socials } from '../constants/global';
 
 const Socials = () => {
   return (
-    <div className='absolute right-4 top-20'>
+    <div className='absolute right-5 top-20'>
       {socials.map((item) => {
         return (
           <div key={item.link} className='mt-3'>
