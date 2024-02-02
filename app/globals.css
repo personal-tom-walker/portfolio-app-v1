@@ -50,6 +50,11 @@ h2 {
 
 p {
   @apply text-base font-light;
+} 
+
+.main-content {
+  height: calc(100vh - 160px);
+  @apply flex flex-col items-end overflow-auto pb-5 px-10;
 }
 
 .button-text {

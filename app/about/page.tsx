@@ -58,7 +58,7 @@ const About = () => {
           </div>
         </div>
       </header>
-      <main className='flex flex-col items-end overflow-hidden pb-5 px-10'>
+      <main className='main-content'>
         <div className='relative flex'>
           <ConnectedCirclesDescendingScale isImg={true} />
         </div>

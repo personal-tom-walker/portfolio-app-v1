@@ -1,5 +1,10 @@
 import { LINKEDIN, GITHUB } from './externalLinks';
 
+export const INFO_CARD_TYPES = {
+  ROLE: 'role',
+  PROJECT: 'project',
+};
+
 export const breakpoints = {
     desktop: 1024,
     tablet: 768,

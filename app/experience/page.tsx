@@ -3,11 +3,12 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-import { mainContentAbout } from '../constants/mainContent';
+import { INFO_CARD_TYPES } from '../constants/global';
+import { mainContentExperience } from '../constants/mainContent';
 import { buttonTypes } from '../constants/global';
 
 import ConnectedCirclesDescendingScale from '../components/ConnectedCirclesDescendingScale';
-import MainContent from '../components/MainContent';
+import InfoCard from '../components/InfoCard';
 
 const About = () => {
   const router = useRouter();
@@ -56,12 +57,15 @@ const About = () => {
           </div>
         </div>
       </header>
-      <main className='flex flex-col items-end overflow-hidden pb-5 px-10'>
+      <main className='main-content'>
         <div className='relative flex'>
           <ConnectedCirclesDescendingScale letter={'B'} />
         </div>
         <div className='flex mt-[-160px]'>
-          <span>content</span>
+          <InfoCard
+            content={mainContentExperience[0]}
+            type={INFO_CARD_TYPES.ROLE}
+          />
         </div>
       </main>
       <footer className='w-full h-20 flex justify-end pb-5 px-10'>

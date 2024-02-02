@@ -8,3 +8,17 @@ export interface MainContentProps {
     subtitle?: string;
     text: string;
 }
+
+interface InfoCardContentProps {
+  role?: string;
+  company: string;
+  link: string;
+  dateRange: string;
+  description: string;
+  technologies?: string[];
+}
+
+export interface InfoCardProps {
+  content: InfoCardContentProps;
+  type: string;
+}
