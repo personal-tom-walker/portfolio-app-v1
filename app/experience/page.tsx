@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -10,17 +12,21 @@ import { buttonTypes } from '../constants/global';
 import ConnectedCirclesDescendingScale from '../components/ConnectedCirclesDescendingScale';
 import InfoCard from '../components/InfoCard';
 
-const About = () => {
+const Experience = () => {
   const router = useRouter();
+
   const [navClick, setNavClick] = useState({
     home: false,
     about: false,
     projects: false,
   });
+  const [activeExperienceIndex, setActiveExperienceIndex] = useState(0);
+
   const triggerNavClick = (type: string) => {
     setNavClick({ ...navClick, [type]: true });
     router.push(type !== buttonTypes.home ? `/${type}` : '/');
   };
+
   return (
     <>
       <header className='flex h-20 pt-10 pl-10 pr-5 justify-between'>
@@ -57,15 +63,51 @@ const About = () => {
           </div>
         </div>
       </header>
-      <main className='main-content'>
+      <main className='main-content mt-10'>
         <div className='relative flex'>
           <ConnectedCirclesDescendingScale letter={'B'} />
         </div>
-        <div className='flex mt-[-160px]'>
+        <div className='flex flex-col mt-[-300px]'>
+          <div
+            role='button'
+            onClick={() =>
+              setActiveExperienceIndex(
+                activeExperienceIndex === 0
+                  ? mainContentExperience.length - 1
+                  : activeExperienceIndex - 1
+              )
+            }
+            className='w-fit mb-4'
+          >
+            <Image
+              src={'/blue-arrow.svg'}
+              alt='arrow up'
+              height={25}
+              width={18}
+            />
+          </div>
           <InfoCard
-            content={mainContentExperience[0]}
+            content={mainContentExperience[activeExperienceIndex]}
             type={INFO_CARD_TYPES.ROLE}
           />
+          <div
+            role='button'
+            onClick={() =>
+              setActiveExperienceIndex(
+                activeExperienceIndex === mainContentExperience.length - 1
+                  ? 0
+                  : activeExperienceIndex + 1
+              )
+            }
+          >
+            <Image
+              src={'/blue-arrow.svg'}
+              alt='arrow up'
+              height={25}
+              width={18}
+              className='w-fit mt-4 rotate-180'
+            />
+          </div>
         </div>
       </main>
       <footer className='w-full h-20 flex justify-end pb-5 px-10'>
@@ -90,4 +132,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Experience;

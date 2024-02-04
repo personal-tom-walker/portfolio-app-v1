@@ -1,6 +1,7 @@
 export interface CircleContentProps {
-    isImg?: boolean;
-    letter?: string;
+  isHome?: boolean;
+  isImg?: boolean;
+  letter?: string;
 }
 
 export interface MainContentProps {

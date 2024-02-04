@@ -10,6 +10,7 @@ import Img from '../../public/profile-line-drawing-200.png';
 import DesktopImg from '../../public/profile-line-drawing-350.png';
 
 const ConnectedCirclesDescendingScale = ({
+  isHome = false,
   isImg = false,
   letter,
 }: CircleContentProps) => {
@@ -54,12 +55,12 @@ const ConnectedCirclesDescendingScale = ({
       </div>
       <div
         className={`flex justify-center items-center w-64 ${
-          letter ? 'mt-[-183px] mb-[63px]' : ''
-        }`}
+          letter && !isHome ? `mt-[-203px] mb-[123px]` : ''
+        } ${letter && isHome ? `mt-[-163px] mb-[83px]` : ''}`}
       >
         {letter && (
           <div
-            className={`w-[120px] h-[120px] ${
+            className={`w-[80px] h-[80px] ${
               letter ? 'border-x border-y border-white' : ''
             } rotate-45`}
           >

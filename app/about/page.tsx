@@ -58,11 +58,11 @@ const About = () => {
           </div>
         </div>
       </header>
-      <main className='main-content'>
+      <main className='main-content mt-10'>
         <div className='relative flex'>
           <ConnectedCirclesDescendingScale isImg={true} />
         </div>
-        <div className='flex mt-[-160px]'>
+        <div className='flex mt-[-180px]'>
           <MainContent content={mainContentAbout} />
         </div>
       </main>

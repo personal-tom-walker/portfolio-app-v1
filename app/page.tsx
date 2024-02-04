@@ -41,11 +41,11 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <main className='main-content'>
+      <main className='main-content justify-end'>
         <div className='relative flex'>
-          <ConnectedCirclesDescendingScale letter={'T'} />
+          <ConnectedCirclesDescendingScale isHome={true} letter={'T'} />
         </div>
-        <div className='flex mt-[-160px]'>
+        <div className='flex mt-[-180px]'>
           <MainContent content={mainContentHome} />
         </div>
       </main>
