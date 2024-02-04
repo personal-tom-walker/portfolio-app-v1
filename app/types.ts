@@ -14,7 +14,7 @@ interface InfoCardContentProps {
   company: string;
   link: string;
   dateRange: string;
-  description: string;
+  Description: any;
   technologies?: string[];
 }
 

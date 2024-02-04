@@ -4,7 +4,7 @@ import { INFO_CARD_TYPES } from '../constants/global';
 import { InfoCardProps } from '../types';
 
 const InfoCard = ({ content, type }: InfoCardProps) => {
-  const { role, company, link, dateRange, description, technologies } = content;
+  const { role, company, link, dateRange, Description, technologies } = content;
   return (
     <div className='flex flex-col'>
       <Link href={link} target='_blank'>
@@ -13,7 +13,7 @@ const InfoCard = ({ content, type }: InfoCardProps) => {
       <span className='text-base font-light text-white opacity-50'>
         {dateRange}
       </span>
-      <p>{description}</p>
+      {Description()}
       {type === INFO_CARD_TYPES.PROJECT &&
         technologies &&
         technologies.map((item: string) => {
