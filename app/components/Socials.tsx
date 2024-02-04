@@ -5,10 +5,10 @@ import { socials } from '../constants/global';
 
 const Socials = () => {
   return (
-    <div className='absolute right-5 top-20'>
+    <div className='absolute right-5 top-24'>
       {socials.map((item) => {
         return (
-          <div key={item.link} className='mt-3'>
+          <div key={item.link} className='mt-4'>
             <Link href={item.link} target='_blank' className='cursor-pointer'>
               <Image
                 src={item.img}

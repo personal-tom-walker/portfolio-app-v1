@@ -58,8 +58,8 @@ a {
 }
 
 .main-content {
-  height: calc(100vh - 160px);
-  @apply flex flex-col items-end overflow-auto pb-10 px-10;
+  height: calc(100vh - 200px);
+  @apply flex flex-col items-end overflow-auto pb-10 px-10 max-w-[400px] m-auto mt-10;
 }
 
 .button-text {

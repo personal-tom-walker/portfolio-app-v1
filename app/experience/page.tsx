@@ -67,7 +67,7 @@ const Experience = () => {
         <div className='relative flex'>
           <ConnectedCirclesDescendingScale letter={'B'} />
         </div>
-        <div className='flex flex-col mt-[-300px]'>
+        <div className='flex flex-col mt-[-320px]'>
           <div
             role='button'
             onClick={() =>

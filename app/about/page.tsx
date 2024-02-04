@@ -58,7 +58,7 @@ const About = () => {
           </div>
         </div>
       </header>
-      <main className='main-content mt-10'>
+      <main className='main-content'>
         <div className='relative flex'>
           <ConnectedCirclesDescendingScale isImg={true} />
         </div>
