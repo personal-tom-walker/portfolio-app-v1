@@ -10,16 +10,24 @@ export interface MainContentProps {
     text: string;
 }
 
+interface Technologies {
+  name: string;
+  link?: string;
+  personalLink?: string;
+  brewbrokerLink?: string;
+}
+
 interface InfoCardContentProps {
   role?: string;
   company: string;
   link: string;
   dateRange: string;
-  Description: any;
-  technologies?: string[];
+  boldText?: string;
+  normalText: string;
+  technologies?: Technologies[];
+  ownDesign?: boolean;
 }
 
 export interface InfoCardProps {
   content: InfoCardContentProps;
-  type: string;
 }

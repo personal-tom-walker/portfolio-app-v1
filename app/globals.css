@@ -66,7 +66,7 @@ a {
   font-size: var(--font-size-md);
   font-weight: var(--font-bold);
   color: rgb(var(--light-col));
-  @apply uppercase text-right;
+  @apply uppercase;
 }
 
 .button {
@@ -74,7 +74,7 @@ a {
 }
 
 .button-line-horizontal {
-  @apply h-5 ml-[-3px];
+  @apply h-5;
   border-bottom: 1px solid rgb(var(--light-col));
   transition: width 0.8s var(--animation-transition-timing-function);
 }
@@ -106,6 +106,18 @@ a {
   .button:hover .button-line-vertical-long {
     @apply h-10;
   }
+}
+
+.technology-button {
+  color: rgb(var(--light-col));
+  border: 1px solid rgb(var(--light-col));
+  background-color: rgba(var(--light-col), 0.2);
+  @apply py-1 px-4 rounded-full w-fit font-normal;
+}
+
+.technology-button-alt {
+  background-color: rgb(var(--light-col));
+  @apply text-white font-semibold;
 }
 
 .circle-letter {

@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-import { INFO_CARD_TYPES } from '../constants/global';
 import { mainContentExperience } from '../constants/mainContent';
 import { buttonTypes } from '../constants/global';
 
@@ -20,7 +19,7 @@ const Experience = () => {
     about: false,
     projects: false,
   });
-  const [activeExperienceIndex, setActiveExperienceIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const triggerNavClick = (type: string) => {
     setNavClick({ ...navClick, [type]: true });
@@ -36,7 +35,7 @@ const Experience = () => {
             onClick={() => triggerNavClick(buttonTypes.home)}
             className='button'
           >
-            <span className='button-text w-[70px] pt-4'>
+            <span className='button-text text-right w-[70px] pt-4'>
               {buttonTypes.home}
             </span>
             <div className='relative flex h-[23px] ml-[-2px] items-end'>
@@ -54,7 +53,9 @@ const Experience = () => {
             onClick={() => triggerNavClick(buttonTypes.about)}
             className='button'
           >
-            <span className='button-text w-[70px]'>{buttonTypes.about}</span>
+            <span className='button-text text-right w-[70px]'>
+              {buttonTypes.about}
+            </span>
             <div
               className={`button-line-vertical-short-up ml-[-2px] mt-[-3px] ${
                 navClick.about ? 'h-5' : 'h-[10px]'
@@ -65,16 +66,18 @@ const Experience = () => {
       </header>
       <main className='main-content mt-10'>
         <div className='relative flex'>
-          <ConnectedCirclesDescendingScale letter={'B'} />
+          <ConnectedCirclesDescendingScale
+            letter={mainContentExperience[activeIndex].letter}
+          />
         </div>
         <div className='flex flex-col mt-[-320px]'>
           <div
             role='button'
             onClick={() =>
-              setActiveExperienceIndex(
-                activeExperienceIndex === 0
+              setActiveIndex(
+                activeIndex === 0
                   ? mainContentExperience.length - 1
-                  : activeExperienceIndex - 1
+                  : activeIndex - 1
               )
             }
             className='w-fit mb-4'
@@ -86,17 +89,14 @@ const Experience = () => {
               width={18}
             />
           </div>
-          <InfoCard
-            content={mainContentExperience[activeExperienceIndex]}
-            type={INFO_CARD_TYPES.ROLE}
-          />
+          <InfoCard content={mainContentExperience[activeIndex]} />
           <div
             role='button'
             onClick={() =>
-              setActiveExperienceIndex(
-                activeExperienceIndex === mainContentExperience.length - 1
+              setActiveIndex(
+                activeIndex === mainContentExperience.length - 1
                   ? 0
-                  : activeExperienceIndex + 1
+                  : activeIndex + 1
               )
             }
           >
@@ -117,11 +117,11 @@ const Experience = () => {
             onClick={() => triggerNavClick(buttonTypes.projects)}
             className='button'
           >
-            <span className='button-text w-[100px]'>
+            <span className='button-text text-right w-[100px]'>
               {buttonTypes.projects}
             </span>
             <div
-              className={`button-line-horizontal ${
+              className={`button-line-horizontal ml-[-3px] ${
                 navClick.projects ? 'w-10' : 'w-5'
               }`}
             ></div>

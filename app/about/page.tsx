@@ -29,7 +29,7 @@ const About = () => {
             onClick={() => triggerNavClick(buttonTypes.home)}
             className='button'
           >
-            <span className='button-text w-[70px] pt-4'>
+            <span className='button-text text-right w-[70px] pt-4'>
               {buttonTypes.home}
             </span>
             <div className='relative flex h-[23px] ml-[-2px] items-end'>
@@ -47,11 +47,11 @@ const About = () => {
             onClick={() => triggerNavClick(buttonTypes.projects)}
             className='button'
           >
-            <span className='button-text w-[100px]'>
+            <span className='button-text text-right w-[100px]'>
               {buttonTypes.projects}
             </span>
             <div
-              className={`button-line-horizontal ${
+              className={`button-line-horizontal ml-[-3px] ${
                 navClick.projects ? 'w-10' : 'w-5'
               }`}
             ></div>
@@ -73,7 +73,7 @@ const About = () => {
             onClick={() => triggerNavClick(buttonTypes.experience)}
             className='button'
           >
-            <span className='button-text w-[120px]'>
+            <span className='button-text text-right w-[120px]'>
               {buttonTypes.experience}
             </span>
             <div

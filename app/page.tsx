@@ -16,7 +16,7 @@ export default function Home() {
     about: false,
     experience: false,
   });
-  const triggerNavClick = (type : string) => {
+  const triggerNavClick = (type: string) => {
     setNavClick({ ...navClick, [type]: true });
     router.push(type !== buttonTypes.home ? `/${type}` : '/');
   };
@@ -30,11 +30,11 @@ export default function Home() {
             onClick={() => triggerNavClick(buttonTypes.projects)}
             className='button'
           >
-            <span className='button-text w-[100px]'>
+            <span className='button-text text-right w-[100px]'>
               {buttonTypes.projects}
             </span>
             <div
-              className={`button-line-horizontal ${
+              className={`button-line-horizontal ml-[-3px] ${
                 navClick.projects ? 'w-10' : 'w-5'
               }`}
             ></div>
@@ -56,7 +56,9 @@ export default function Home() {
             onClick={() => triggerNavClick(buttonTypes.about)}
             className='button'
           >
-            <span className='button-text w-[70px]'>{buttonTypes.about}</span>
+            <span className='button-text text-right w-[70px]'>
+              {buttonTypes.about}
+            </span>
             <div
               className={`button-line-vertical-short ml-[-6px] ${
                 navClick.about ? 'h-5' : 'h-[10px]'
@@ -70,7 +72,7 @@ export default function Home() {
             onClick={() => triggerNavClick(buttonTypes.experience)}
             className='button'
           >
-            <span className='button-text w-[120px]'>
+            <span className='button-text text-right w-[120px]'>
               {buttonTypes.experience}
             </span>
             <div
