@@ -14,6 +14,8 @@ import ConnectedCirclesDescendingScale from '../ConnectedCirclesDescendingScale'
 import MainContent from '../MainContent';
 import Footer from './Footer';
 
+import HomeBg from '../../../public/home-hero-v2-1440-1024.jpg';
+
 const Home = () => {
   const router = useRouter();
   const [navClick, setNavClick] = useState({
@@ -25,8 +27,13 @@ const Home = () => {
     setNavClick({ ...navClick, [type]: true });
     router.push(type !== buttonTypes.home ? `/${type}` : '/');
   };
+  console.log('homeBG', HomeBg);
   return (
     <>
+      <div
+        className='absolute w-full h-screen bg-cover bg-no-repeat bg-right-top -z-10'
+        style={{ backgroundImage: `url(${HomeBg.src})` }}
+      ></div>
       <main className='main justify-end'>
         <div className='flex flex-col w-1/2 gap-16'>
           <MainContent content={mainContentHome} />
