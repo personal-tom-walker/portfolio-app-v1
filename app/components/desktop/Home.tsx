@@ -10,7 +10,6 @@ import ProjectsButton from '../buttons/Projects';
 import AboutButton from '../buttons/About';
 import ExperienceButton from '../buttons/Experience';
 
-import ConnectedCirclesDescendingScale from '../ConnectedCirclesDescendingScale';
 import MainContent from '../MainContent';
 import Footer from './Footer';
 

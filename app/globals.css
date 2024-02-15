@@ -140,6 +140,11 @@ a {
   @apply opacity-100;
 }
 
+.projects-overlay {
+  background-image: linear-gradient(270deg, rgb(var(--dark-col)), rgb(var(--dark-col)), rgb(var(--dark-col), 0));
+  @apply absolute w-full h-screen -z-10
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
