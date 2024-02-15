@@ -58,13 +58,14 @@ a {
 }
 
 .main {
-  height: calc(100vh - 200px);
-  @apply flex flex-col items-end overflow-auto pb-10 px-10 max-w-[400px] m-auto mt-10;
+  height: calc(100vh - 160px);
+  @apply flex flex-col items-end overflow-visible pb-10 px-10 max-w-[400px] m-auto;
 }
 
 @media screen and (min-width: 1024px) {
   .main {
-    @apply max-w-none
+    height: calc(100vh - 80px);
+    @apply flex-row max-w-none py-10
   }
 }
 
@@ -111,6 +112,13 @@ a {
   }
   .button:hover .button-line-vertical-long {
     @apply h-10;
+  }
+  .social-icon {
+    transition: all 0.5s var(--animation-transition-timing-function);
+    @apply opacity-50;
+  }
+  .social-icon:hover {
+    @apply opacity-100;
   }
 }
 

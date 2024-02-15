@@ -1,3 +1,13 @@
+export interface SocialsObj {
+  name: string;
+  img: string;
+  link: string;
+}
+
+export interface SocialItemsProps {
+  item: SocialsObj;
+}
+
 export interface CircleContentProps {
   isHome?: boolean;
   isImg?: boolean;
@@ -5,9 +15,9 @@ export interface CircleContentProps {
 }
 
 export interface MainContentProps {
-    title?: string;
-    subtitle?: string;
-    text: string;
+  title?: string;
+  subtitle?: string;
+  text: string;
 }
 
 interface Technologies {

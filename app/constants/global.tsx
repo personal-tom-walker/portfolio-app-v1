@@ -1,3 +1,5 @@
+export const PROFESSIONAL_EMAIL = 'walkertom1996@gmail.com';
+
 import { LINKEDIN, GITHUB } from './externalLinks';
 
 const TECHNOLOGY_NAMES = {
@@ -96,10 +98,12 @@ export const buttonTypes = {
 
 export const socials = [
   {
+    name: 'LinkedIn',
     img: '/linkedin-icon-white.svg',
     link: LINKEDIN,
   },
   {
+    name: 'GitHub',
     img: '/github-icon-white.svg',
     link: GITHUB,
   },

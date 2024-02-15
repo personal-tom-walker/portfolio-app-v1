@@ -6,7 +6,10 @@ import { useState } from 'react';
 import { mainContentHome } from '@/app/constants/mainContent';
 import { buttonTypes } from '@/app/constants/global';
 
-import ProjectsButton from '../buttons/projects';
+import ProjectsButton from '../buttons/Projects';
+import AboutButton from '../buttons/About';
+import ExperienceButton from '../buttons/Experience';
+
 import ConnectedCirclesDescendingScale from '../ConnectedCirclesDescendingScale';
 import MainContent from '../MainContent';
 
@@ -23,8 +26,10 @@ const Home = () => {
   };
   return (
     <>
-      <ProjectsButton onClick={triggerNavClick} navClick={navClick} />
-      <main className='main justify-end border-white border'>
+      <nav className='flex h-20 pt-9 pl-10 pr-5 justify-end bg-transparent	'>
+        <ProjectsButton onClick={triggerNavClick} navClick={navClick} />
+      </nav>
+      <main className='main justify-end'>
         <div className='relative flex'>
           <ConnectedCirclesDescendingScale isHome={true} letter={'T'} />
         </div>
@@ -32,40 +37,10 @@ const Home = () => {
           <MainContent content={mainContentHome} />
         </div>
       </main>
-      <footer className='w-full h-20 flex justify-between pb-5 px-10'>
-        <div className='w-[100px]'>
-          <div
-            role='button'
-            onClick={() => triggerNavClick(buttonTypes.about)}
-            className='button'
-          >
-            <span className='button-text text-right w-[70px]'>
-              {buttonTypes.about}
-            </span>
-            <div
-              className={`button-line-vertical-short ml-[-6px] ${
-                navClick.about ? 'h-5' : 'h-[10px]'
-              }`}
-            ></div>
-          </div>
-        </div>
-        <div className='w-[120px]'>
-          <div
-            role='button'
-            onClick={() => triggerNavClick(buttonTypes.experience)}
-            className='button'
-          >
-            <span className='button-text text-right w-[120px]'>
-              {buttonTypes.experience}
-            </span>
-            <div
-              className={`button-line-vertical-long ml-[-2px] ${
-                navClick.experience ? 'h-10' : 'h-5'
-              }`}
-            ></div>
-          </div>
-        </div>
-      </footer>
+      <nav className='w-full h-20 flex justify-between pb-5 px-10'>
+        <AboutButton onClick={triggerNavClick} navClick={navClick} />
+        <ExperienceButton onClick={triggerNavClick} navClick={navClick} />
+      </nav>
     </>
   );
 };
