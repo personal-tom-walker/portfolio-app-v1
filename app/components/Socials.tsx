@@ -5,7 +5,7 @@ import { socials } from '../constants/global';
 
 const Socials = () => {
   return (
-    <div className='absolute right-5 top-24'>
+    <aside className='absolute right-5 top-24'>
       {socials.map((item) => {
         return (
           <div key={item.link} className='mt-4'>
@@ -20,7 +20,7 @@ const Socials = () => {
           </div>
         );
       })}
-    </div>
+    </aside>
   );
 };
 

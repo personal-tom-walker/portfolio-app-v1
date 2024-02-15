@@ -57,9 +57,15 @@ a {
   @apply font-bold;
 }
 
-.main-content {
+.main {
   height: calc(100vh - 200px);
   @apply flex flex-col items-end overflow-auto pb-10 px-10 max-w-[400px] m-auto mt-10;
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    @apply max-w-none
+  }
 }
 
 .button-text {

@@ -64,7 +64,7 @@ const Experience = () => {
           </div>
         </div>
       </header>
-      <main className='main-content mt-10'>
+      <main className='main mt-10'>
         <div className='relative flex'>
           <ConnectedCirclesDescendingScale
             letter={mainContentExperience[activeIndex].letter}
