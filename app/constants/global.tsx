@@ -1,6 +1,17 @@
+import { LINKEDIN, GITHUB } from './externalLinks';
+
 export const PROFESSIONAL_EMAIL = 'walkertom1996@gmail.com';
 
-import { LINKEDIN, GITHUB } from './externalLinks';
+export const DEVICE_NAMES = {
+  MOBILE: 'mobile',
+  TABLET: 'tablet',
+  DESKTOP: 'desktop',
+}
+
+export const breakpoints = {
+  desktop: 1024,
+  tablet: 768,
+};
 
 const TECHNOLOGY_NAMES = {
   WORDPRESS: 'WordPress',
@@ -84,10 +95,6 @@ export const technologies = {
   },
 };
 
-export const breakpoints = {
-  desktop: 1024,
-  tablet: 768,
-};
 
 export const buttonTypes = {
   home: 'home',

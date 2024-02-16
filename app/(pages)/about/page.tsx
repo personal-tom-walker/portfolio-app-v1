@@ -3,11 +3,11 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-import { mainContentAbout } from '../constants/mainContent';
-import { buttonTypes } from '../constants/global';
+import { mainContentAbout } from '../../constants/mainContent';
+import { buttonTypes } from '../../constants/global';
 
-import ConnectedCirclesDescendingScale from '../components/ConnectedCirclesDescendingScale';
-import MainContent from '../components/MainContent';
+import ConnectedCirclesDescendingScale from '../../components/ConnectedCirclesDescendingScale';
+import MainContent from '../../components/MainContent';
 
 const About = () => {
   const router = useRouter();

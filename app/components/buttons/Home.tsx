@@ -2,7 +2,7 @@ import { buttonTypes } from '@/app/constants/global';
 
 const Home = ({ onClick, navClick }: { onClick: any; navClick: any }) => {
   return (
-    <div className='flex items-end w-[100px]'>
+    <div className='flex items-end w-[100px] h-fit'>
       <div
         role='button'
         onClick={() => onClick(buttonTypes.home)}

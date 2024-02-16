@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useContext } from 'react';
 
 import { InfoCardProps } from '../types';
+import { DeviceContext } from '../hooks/useContext/context';
+import { DEVICE_NAMES } from '../constants/global';
 
 const InfoCard = ({ content }: InfoCardProps) => {
   const {
@@ -14,6 +17,7 @@ const InfoCard = ({ content }: InfoCardProps) => {
     technologies,
     ownDesign,
   } = content;
+  const device = useContext(DeviceContext);
   return (
     <div className='flex flex-col'>
       <Link
@@ -35,8 +39,20 @@ const InfoCard = ({ content }: InfoCardProps) => {
       <span className='text-base font-light text-white opacity-50 mb-6'>
         {dateRange}
       </span>
-      <p className='font-bold mb-2'>{boldText}</p>
-      <p className='font-light'>{normalText}</p>
+      <p
+        className={`font-bold mb-2 ${device === DEVICE_NAMES.MOBILE ? '' : 'text-xl'}`}
+      >
+        {boldText}
+      </p>
+      <p
+        className={
+          device === DEVICE_NAMES.MOBILE
+            ? 'font-light'
+            : 'font-extralight text-lg'
+        }
+      >
+        {normalText}
+      </p>
       <div className='flex flex-wrap mt-6'>
         {technologies &&
           technologies.map((item) => {

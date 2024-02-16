@@ -5,11 +5,11 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-import { infoCardExperience } from '../constants/mainContent';
-import { buttonTypes } from '../constants/global';
+import { infoCardExperience } from '../../constants/mainContent';
+import { buttonTypes } from '../../constants/global';
 
-import ConnectedCirclesDescendingScale from '../components/ConnectedCirclesDescendingScale';
-import InfoCard from '../components/InfoCard';
+import ConnectedCirclesDescendingScale from '../../components/ConnectedCirclesDescendingScale';
+import InfoCard from '../../components/InfoCard';
 
 const Experience = () => {
   const router = useRouter();
