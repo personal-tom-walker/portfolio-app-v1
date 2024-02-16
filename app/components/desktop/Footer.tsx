@@ -17,7 +17,7 @@ const Footer = () => {
       <div className='flex'>
         {socials.map((item: SocialsObj) => {
           return (
-            <div key={item.link} className='mx-2'>
+            <div key={item.link} className='ml-3'>
               <SocialItem item={item} />
             </div>
           );

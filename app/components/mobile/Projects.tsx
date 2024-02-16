@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-import { mainContentProjects } from '../../constants/mainContent';
+import { infoCardProjects } from '../../constants/mainContent';
 import { buttonTypes } from '../../constants/global';
 
 import HomeButton from '../buttons/Home';
@@ -34,7 +34,7 @@ export default function Projects() {
       <main className='main mt-10'>
         <div className='relative flex'>
           <ConnectedCirclesDescendingScale
-            letter={mainContentProjects[activeIndex].letter}
+            letter={infoCardProjects[activeIndex].letter}
           />
         </div>
         <div className='flex flex-col mt-[-320px]'>
@@ -43,7 +43,7 @@ export default function Projects() {
             onClick={() =>
               setActiveIndex(
                 activeIndex === 0
-                  ? mainContentProjects.length - 1
+                  ? infoCardProjects.length - 1
                   : activeIndex - 1
               )
             }
@@ -56,12 +56,12 @@ export default function Projects() {
               width={18}
             />
           </div>
-          <InfoCard content={mainContentProjects[activeIndex]} />
+          <InfoCard content={infoCardProjects[activeIndex]} />
           <div
             role='button'
             onClick={() =>
               setActiveIndex(
-                activeIndex === mainContentProjects.length - 1
+                activeIndex === infoCardProjects.length - 1
                   ? 0
                   : activeIndex + 1
               )

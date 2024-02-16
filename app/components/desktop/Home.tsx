@@ -26,7 +26,6 @@ const Home = () => {
     setNavClick({ ...navClick, [type]: true });
     router.push(type !== buttonTypes.home ? `/${type}` : '/');
   };
-  console.log('homeBG', HomeBg);
   return (
     <>
       <div

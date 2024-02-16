@@ -5,7 +5,10 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-import { mainContentProjects } from '../../constants/mainContent';
+import {
+  titleContentProjects,
+  infoCardProjects,
+} from '../../constants/mainContent';
 import { buttonTypes } from '../../constants/global';
 
 import HomeButton from '../buttons/Home';
@@ -14,6 +17,7 @@ import InfoCard from '../InfoCard';
 import Footer from './Footer';
 
 import ProjectsBg from '../../../public/projects-hero-v2.jpg';
+import MainContent from '../MainContent';
 
 export default function Projects() {
   const router = useRouter();
@@ -34,14 +38,15 @@ export default function Projects() {
         className='absolute w-full h-screen bg-no-repeat bg-left-top -z-10'
         style={{ backgroundImage: `url(${ProjectsBg.src})` }}
       ></div>
-      <div
-        className='projects-overlay'
-      ></div>
+      <div className='projects-overlay'></div>
       <main className='main mt-10'>
         <div className='flex flex-col w-1/2'>
-          <nav className='flex h-20 pt-9 pl-5 pr-5'>
-            <HomeButton onClick={triggerNavClick} navClick={navClick} />
-          </nav>
+          <div className='flex flex-col w-2/3'>
+            <MainContent content={titleContentProjects} />
+            <nav className='flex h-16'>
+              <HomeButton onClick={triggerNavClick} navClick={navClick} />
+            </nav>
+          </div>
         </div>
         <div className='flex flex-col w-1/2'>
           <div className='flex flex-col'>
@@ -50,7 +55,7 @@ export default function Projects() {
               onClick={() =>
                 setActiveIndex(
                   activeIndex === 0
-                    ? mainContentProjects.length - 1
+                    ? infoCardProjects.length - 1
                     : activeIndex - 1
                 )
               }
@@ -63,12 +68,12 @@ export default function Projects() {
                 width={18}
               />
             </div>
-            <InfoCard content={mainContentProjects[activeIndex]} />
+            <InfoCard content={infoCardProjects[activeIndex]} />
             <div
               role='button'
               onClick={() =>
                 setActiveIndex(
-                  activeIndex === mainContentProjects.length - 1
+                  activeIndex === infoCardProjects.length - 1
                     ? 0
                     : activeIndex + 1
                 )

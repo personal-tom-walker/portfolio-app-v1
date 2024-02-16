@@ -10,7 +10,7 @@ export const mainContentAbout = {
   text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.',
 };
 
-export const mainContentExperience = [
+export const infoCardExperience = [
   {
     letter: 'B',
     role: 'FE Engineer',
@@ -33,7 +33,12 @@ export const mainContentExperience = [
   },
 ];
 
-export const mainContentProjects = [
+export const titleContentProjects = {
+  subtitle: 'Projects',
+  text: 'Explore my completed projects. Where available, click to open the homepage of each project in a new tab',
+};
+
+export const infoCardProjects = [
   {
     letter: 'L',
     company: 'Lost Dream Studio',

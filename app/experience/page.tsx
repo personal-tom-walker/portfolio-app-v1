@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-import { mainContentExperience } from '../constants/mainContent';
+import { infoCardExperience } from '../constants/mainContent';
 import { buttonTypes } from '../constants/global';
 
 import ConnectedCirclesDescendingScale from '../components/ConnectedCirclesDescendingScale';
@@ -67,7 +67,7 @@ const Experience = () => {
       <main className='main mt-10'>
         <div className='relative flex'>
           <ConnectedCirclesDescendingScale
-            letter={mainContentExperience[activeIndex].letter}
+            letter={infoCardExperience[activeIndex].letter}
           />
         </div>
         <div className='flex flex-col mt-[-320px]'>
@@ -76,7 +76,7 @@ const Experience = () => {
             onClick={() =>
               setActiveIndex(
                 activeIndex === 0
-                  ? mainContentExperience.length - 1
+                  ? infoCardExperience.length - 1
                   : activeIndex - 1
               )
             }
@@ -89,12 +89,12 @@ const Experience = () => {
               width={18}
             />
           </div>
-          <InfoCard content={mainContentExperience[activeIndex]} />
+          <InfoCard content={infoCardExperience[activeIndex]} />
           <div
             role='button'
             onClick={() =>
               setActiveIndex(
-                activeIndex === mainContentExperience.length - 1
+                activeIndex === infoCardExperience.length - 1
                   ? 0
                   : activeIndex + 1
               )
