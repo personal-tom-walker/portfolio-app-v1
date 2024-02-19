@@ -1,14 +1,14 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { mainContentHome } from '@/app/constants/mainContent';
 import { buttonTypes } from '@/app/constants/global';
 
-import ProjectsButton from '../buttons/Projects';
-import AboutButton from '../buttons/About';
-import ExperienceButton from '../buttons/Experience';
+import ProjectsButton from '../NavButtons/Projects/Projects';
+import AboutDown from '../NavButtons/About/AboutDown';
+import ExperienceButton from '../NavButtons/Experience/Experience';
 
 import ConnectedCirclesDescendingScale from '../ConnectedCirclesDescendingScale';
 import MainContent from '../MainContent';
@@ -20,10 +20,23 @@ const Home = () => {
     about: false,
     experience: false,
   });
+  const [selectedNav, setSelectedNav] = useState<string | null>(null);
+
   const triggerNavClick = (type: string) => {
     setNavClick({ ...navClick, [type]: true });
-    router.push(type !== buttonTypes.home ? `/${type}` : '/');
+    setSelectedNav(type);
   };
+
+  useEffect(() => {
+    if (selectedNav) {
+      const routerTimeoutId = setTimeout(() => {
+        router.push(selectedNav !== buttonTypes.home ? `/${selectedNav}` : '/');
+      }, 1000);
+
+      return () => clearTimeout(routerTimeoutId);
+    }
+  }, [selectedNav, router]);
+
   return (
     <>
       <nav className='flex h-20 pt-9 pl-10 pr-5 justify-end bg-transparent'>
@@ -38,8 +51,8 @@ const Home = () => {
         </div>
       </main>
       <nav className='w-full h-20 flex justify-between pb-5 px-10'>
-        <AboutButton onClick={triggerNavClick} navClick={navClick} />
-        <ExperienceButton onClick={triggerNavClick} navClick={navClick} />
+        <AboutDown onClick={triggerNavClick} navClick={navClick} />
+        <ExperienceButton onClick={triggerNavClick} navClick={navClick} isLong={true} />
       </nav>
     </>
   );

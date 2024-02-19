@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { infoCardProjects } from '../../constants/mainContent';
 import { buttonTypes } from '../../constants/global';
 
-import HomeButton from '../buttons/homeButtons/HomeLeft';
+import HomeButton from '../NavButtons/Home/HomeLeft';
 
 import ConnectedCirclesDescendingScale from '../ConnectedCirclesDescendingScale';
 import InfoCard from '../InfoCard';

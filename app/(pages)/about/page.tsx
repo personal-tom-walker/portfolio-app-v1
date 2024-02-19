@@ -5,10 +5,10 @@ import { useContext } from 'react';
 import { DEVICE_NAMES } from '../../constants/global';
 import { DeviceContext } from '../../hooks/useContext/context';
 
-import AboutMobile from '../../components/mobile/About';
-import SocialsSidebar from '../../components/mobile/SocialsSidebar';
+import AboutMobile from '../../components/MobileOnly/About';
+import SocialsSidebar from '../../components/MobileOnly/SocialsSidebar';
 
-import AboutDesktop from '../../components/desktop/About';
+import AboutDesktop from '../../components/DesktopOnly/About';
 
 export default function About() {
   const device = useContext(DeviceContext);

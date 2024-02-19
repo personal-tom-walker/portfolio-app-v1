@@ -11,7 +11,7 @@ import {
 } from '../../constants/mainContent';
 import { buttonTypes } from '../../constants/global';
 
-import HomeButton from '../buttons/homeButtons/HomeLeft';
+import HomeButton from '../NavButtons/Home/HomeLeft';
 
 import InfoCard from '../InfoCard';
 import Footer from './Footer';

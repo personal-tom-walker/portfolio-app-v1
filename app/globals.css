@@ -65,7 +65,7 @@ a {
 @media screen and (min-width: 1024px) {
   .main {
     height: calc(100vh - 80px);
-    @apply flex-row max-w-none py-10
+    @apply flex-row max-w-none py-10;
   }
 }
 
@@ -86,19 +86,7 @@ a {
   transition: width 0.8s var(--animation-transition-timing-function);
 }
 
-.button-line-vertical-short {
-  @apply mt-[20px];
-  border-left: 1px solid rgb(var(--light-col));
-  transition: height 0.8s var(--animation-transition-timing-function);
-}
-
-.button-line-vertical-short-up {
-  border-left: 1px solid rgb(var(--light-col));
-  transition: height 0.8s var(--animation-transition-timing-function);
-}
-
-.button-line-vertical-long {
-  @apply mt-[20px];
+.button-line-vertical {
   border-left: 1px solid rgb(var(--light-col));
   transition: height 0.8s var(--animation-transition-timing-function);
 }
@@ -141,8 +129,13 @@ a {
 }
 
 .projects-overlay {
-  background-image: linear-gradient(270deg, rgb(var(--dark-col)), rgb(var(--dark-col)), rgb(var(--dark-col), 0));
-  @apply absolute w-full h-screen -z-10
+  background-image: linear-gradient(
+    270deg,
+    rgb(var(--dark-col)),
+    rgb(var(--dark-col)),
+    rgb(var(--dark-col), 0)
+  );
+  @apply absolute w-full h-screen -z-10;
 }
 
 @layer utilities {

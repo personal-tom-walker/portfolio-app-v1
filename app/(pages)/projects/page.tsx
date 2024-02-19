@@ -5,8 +5,8 @@ import { useContext } from 'react';
 import { DEVICE_NAMES } from '../../constants/global';
 import { DeviceContext } from '../../hooks/useContext/context';
 
-import ProjectsMobile from '../../components/mobile/Projects';
-import ProjectsDesktop from '../../components/desktop/Projects';
+import ProjectsMobile from '../../components/MobileOnly/Projects';
+import ProjectsDesktop from '../../components/DesktopOnly/Projects';
 
 export default function Projects() {
   const device = useContext(DeviceContext);
@@ -16,4 +16,3 @@ export default function Projects() {
   }
   return <ProjectsDesktop />;
 }
-

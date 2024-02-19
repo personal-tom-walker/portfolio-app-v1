@@ -1,13 +1,14 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { mainContentAbout } from '../../constants/mainContent';
 import { buttonTypes } from '../../constants/global';
 
-import ProjectsButton from '../buttons/Projects';
-import HomeButton from '../buttons/homeButtons/HomeUp';
+import ProjectsButton from '../NavButtons/Projects/Projects';
+import HomeButton from '../NavButtons/Home/HomeUp';
+import ExperienceButton from '../NavButtons/Experience/Experience';
 
 import ConnectedCirclesDescendingScale from '../../components/ConnectedCirclesDescendingScale';
 import MainContent from '../../components/MainContent';
@@ -19,14 +20,31 @@ const About = () => {
     projects: false,
     experience: false,
   });
+  const [selectedNav, setSelectedNav] = useState<string | null>(null);
+
   const triggerNavClick = (type: string) => {
     setNavClick({ ...navClick, [type]: true });
-    router.push(type !== buttonTypes.home ? `/${type}` : '/');
+    setSelectedNav(type);
   };
+
+  useEffect(() => {
+    if (selectedNav) {
+      const routerTimeoutId = setTimeout(() => {
+        router.push(selectedNav !== buttonTypes.home ? `/${selectedNav}` : '/');
+      }, 1000);
+
+      return () => clearTimeout(routerTimeoutId);
+    }
+  }, [selectedNav, router]);
+
   return (
     <>
       <nav className='flex h-20 pt-5 pl-10 pr-5 justify-between'>
-        <HomeButton onClick={triggerNavClick} navClick={navClick} />
+        <HomeButton
+          onClick={triggerNavClick}
+          navClick={navClick}
+          isLong={false}
+        />
         <ProjectsButton onClick={triggerNavClick} navClick={navClick} />
       </nav>
       <main className='main'>
@@ -37,23 +55,12 @@ const About = () => {
           <MainContent content={mainContentAbout} />
         </div>
       </main>
-      <footer className='w-full h-20 flex pb-5 px-10'>
-        <div className='w-[120px]'>
-          <div
-            role='button'
-            onClick={() => triggerNavClick(buttonTypes.experience)}
-            className='button'
-          >
-            <span className='button-text text-right w-[120px]'>
-              {buttonTypes.experience}
-            </span>
-            <div
-              className={`button-line-vertical-long ml-[-2px] ${
-                navClick.experience ? 'h-5' : 'h-[10px]'
-              }`}
-            ></div>
-          </div>
-        </div>
+      <footer className='w-full h-20 flex justify-end pb-5 px-10'>
+        <ExperienceButton
+          onClick={triggerNavClick}
+          navClick={navClick}
+          isLong={false}
+        />
       </footer>
     </>
   );

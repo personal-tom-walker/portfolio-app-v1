@@ -6,9 +6,9 @@ import { useState } from 'react';
 import { mainContentHome } from '@/app/constants/mainContent';
 import { buttonTypes } from '@/app/constants/global';
 
-import ProjectsButton from '../buttons/Projects';
-import AboutButton from '../buttons/About';
-import ExperienceButton from '../buttons/Experience';
+import ProjectsButton from '../NavButtons/Projects/Projects';
+import AboutButton from '../NavButtons/About/AboutDown';
+import ExperienceButton from '../NavButtons/Experience/Experience';
 
 import MainContent from '../MainContent';
 import Footer from './Footer';
@@ -38,7 +38,7 @@ const Home = () => {
           <nav className='w-full h-16 flex justify-between'>
             <div className='flex'>
               <AboutButton onClick={triggerNavClick} navClick={navClick} />
-              <ExperienceButton onClick={triggerNavClick} navClick={navClick} />
+              <ExperienceButton onClick={triggerNavClick} navClick={navClick} isLong={true} />
             </div>
             <div>
               <ProjectsButton onClick={triggerNavClick} navClick={navClick} />

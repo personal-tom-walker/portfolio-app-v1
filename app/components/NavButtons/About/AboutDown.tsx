@@ -1,6 +1,6 @@
 import { buttonTypes } from '@/app/constants/global';
 
-const About = ({ onClick, navClick }: { onClick: any; navClick: any }) => {
+const AboutDown = ({ onClick, navClick }: { onClick: any; navClick: any }) => {
   return (
     <div className='w-[100px]'>
       <div
@@ -12,7 +12,7 @@ const About = ({ onClick, navClick }: { onClick: any; navClick: any }) => {
           {buttonTypes.about}
         </span>
         <div
-          className={`button-line-vertical-short ml-[-6px] ${
+          className={`button-line-vertical button-line-vertical-short mt-[20px] ml-[-6px] ${
             navClick.about ? 'h-5' : 'h-[10px]'
           }`}
         ></div>
@@ -21,4 +21,4 @@ const About = ({ onClick, navClick }: { onClick: any; navClick: any }) => {
   );
 };
 
-export default About;
+export default AboutDown;
