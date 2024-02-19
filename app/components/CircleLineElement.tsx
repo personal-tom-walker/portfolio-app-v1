@@ -2,7 +2,12 @@
 
 import { CircleLineElementProps } from '../types';
 
-const CircleLineElement = ({ index, letter }: CircleLineElementProps) => {
+const CircleLineElement = ({
+  index,
+  letter,
+  activeIndex,
+  setActiveIndex,
+}: CircleLineElementProps) => {
   return (
     <div className={`flex flex-col ${index % 2 ? '' : 'items-end'}`}>
       {index !== 0 && (
@@ -12,11 +17,34 @@ const CircleLineElement = ({ index, letter }: CircleLineElementProps) => {
           }`}
         ></div>
       )}
-      <div className='circle-line-element__circle-letter-container'>
-        <div className='circle-line-element__circle'></div>
-        <div className='circle-line-element__letter-box'>
+      <div
+        className={`circle-line-element__circle-letter-container ${
+          activeIndex === index ? 'scale-125' : ''
+        }`}
+      >
+        <div
+          className={`circle-line-element__circle ${
+            activeIndex === index ? 'circle-line-element__circle-active' : ''
+          }`}
+          onMouseOver={() => setActiveIndex(index)}
+        ></div>
+        <div
+          className={`w-[60px] h-[60px] border-x border-y border-white rotate-45 mt-[-90px] mb-[30px] ml-[30px] cursor-pointer ${
+            activeIndex === index
+              ? 'circle-line-element__letter-box-active'
+              : ''
+          }`}
+        >
           <div className='w-full h-full rotate-[-45deg] flex justify-center items-center'>
-            <span className='circle-line-element__letter'>{letter}</span>
+            <span
+              className={`circle-line-element__letter ${
+                activeIndex === index
+                  ? 'circle-line-element__letter-active'
+                  : ''
+              }`}
+            >
+              {letter}
+            </span>
           </div>
         </div>
       </div>

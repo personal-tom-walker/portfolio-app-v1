@@ -11,6 +11,8 @@ export interface SocialItemsProps {
 export interface CircleLineElementProps {
   index: number;
   letter: string;
+  activeIndex: number;
+  setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export interface CircleContentProps {

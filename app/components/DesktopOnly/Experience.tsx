@@ -55,6 +55,8 @@ const Experience = () => {
                     key={index}
                     index={index}
                     letter={letter}
+                    activeIndex={activeIndex}
+                    setActiveIndex={setActiveIndex}
                   />
                 );
               })}

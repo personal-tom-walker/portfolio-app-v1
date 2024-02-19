@@ -105,7 +105,7 @@ a {
 }
 
 .circle-line-element__circle-letter-container {
-  transition: all 0.5s var(--animation-transition-timing-function);
+  transition: all 0.8s var(--animation-transition-timing-function);
   @apply flex flex-col;
 }
 
@@ -113,18 +113,30 @@ a {
   @apply bg-white opacity-20 rounded-full w-[120px] h-[120px] cursor-pointer;
 }
 
+.circle-line-element__circle-active {
+  @apply opacity-100;
+}
+
 .circle-line-element__letter-box {
   @apply w-[60px] h-[60px] border-x border-y border-white rotate-45 mt-[-90px] mb-[30px] ml-[30px] cursor-pointer;
 }
 
-.circle-letter {
-  font-size: var(--font-size-xxl);
-  color: rgb(var(--white));
-  @apply opacity-100;
+.circle-line-element__letter-box-active {
+  @apply border-black;
 }
 
 .circle-line-element__letter {
+  transition: all 0.4s var(--animation-transition-timing-function);
+  font-size: var(--font-size-lg);
+}
+
+.circle-line-element__letter-active {
   font-size: var(--font-size-xl);
+  @apply text-black;
+}
+
+.circle-letter {
+  font-size: var(--font-size-xxl);
   color: rgb(var(--white));
   @apply opacity-100;
 }
@@ -138,7 +150,6 @@ a {
   );
   @apply absolute w-full h-screen -z-10;
 }
-
 
 @media (hover: hover) {
   .button:hover .button-line-horizontal {
@@ -157,18 +168,21 @@ a {
   .social-icon:hover {
     @apply opacity-100;
   }
-  .circle-line-element__circle-letter-container:hover {
+  /* .circle-line-element__circle-letter-container:hover {
     @apply scale-125;
   }
-  .circle-line-element__circle-letter-container:hover .circle-line-element__circle {
+  .circle-line-element__circle-letter-container:hover
+    .circle-line-element__circle {
     @apply opacity-100;
   }
-  .circle-line-element__circle-letter-container:hover .circle-line-element__letter-box {
+  .circle-line-element__circle-letter-container:hover
+    .circle-line-element__letter-box {
     @apply border-black;
   }
-  .circle-line-element__circle-letter-container:hover .circle-line-element__letter {
+  .circle-line-element__circle-letter-container:hover
+    .circle-line-element__letter {
     @apply text-black;
-  }
+  } */
 }
 
 @layer utilities {
