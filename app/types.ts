@@ -8,6 +8,11 @@ export interface SocialItemsProps {
   item: SocialsObj;
 }
 
+export interface CircleLineElementProps {
+  index: number;
+  letter: string;
+}
+
 export interface CircleContentProps {
   isHome?: boolean;
   isImg?: boolean;

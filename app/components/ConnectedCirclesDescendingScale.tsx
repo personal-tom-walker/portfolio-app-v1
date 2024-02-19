@@ -65,7 +65,7 @@ const ConnectedCirclesDescendingScale = ({
             } rotate-45`}
           >
             <div className='w-full h-full rotate-[-45deg] flex justify-center items-center'>
-              <span className='circle-letter'>{letter}</span>
+              <span className='circle-letter text-5xl'>{letter}</span>
             </div>
           </div>
         )}

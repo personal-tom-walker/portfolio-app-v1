@@ -16,7 +16,8 @@
   --font-size-sm: 1rem;
   --font-size-md: 1.125rem;
   --font-size-lg: 1.25rem;
-  --font-size-xl: 3rem;
+  --font-size-xl: 2rem;
+  --font-size-xxl: 3rem;
 
   --font-bold: 700;
   --font-reg: 400;
@@ -91,6 +92,54 @@ a {
   transition: height 0.8s var(--animation-transition-timing-function);
 }
 
+.technology-button {
+  color: rgb(var(--light-col));
+  border: 1px solid rgb(var(--light-col));
+  background-color: rgba(var(--light-col), 0.2);
+  @apply py-1 px-4 rounded-full w-fit font-normal;
+}
+
+.technology-button-alt {
+  background-color: rgb(var(--light-col));
+  @apply text-white font-semibold;
+}
+
+.circle-line-element__circle-letter-container {
+  transition: all 0.5s var(--animation-transition-timing-function);
+  @apply flex flex-col;
+}
+
+.circle-line-element__circle {
+  @apply bg-white opacity-20 rounded-full w-[120px] h-[120px] cursor-pointer;
+}
+
+.circle-line-element__letter-box {
+  @apply w-[60px] h-[60px] border-x border-y border-white rotate-45 mt-[-90px] mb-[30px] ml-[30px] cursor-pointer;
+}
+
+.circle-letter {
+  font-size: var(--font-size-xxl);
+  color: rgb(var(--white));
+  @apply opacity-100;
+}
+
+.circle-line-element__letter {
+  font-size: var(--font-size-xl);
+  color: rgb(var(--white));
+  @apply opacity-100;
+}
+
+.projects-overlay {
+  background-image: linear-gradient(
+    270deg,
+    rgb(var(--dark-col)),
+    rgb(var(--dark-col)),
+    rgb(var(--dark-col), 0)
+  );
+  @apply absolute w-full h-screen -z-10;
+}
+
+
 @media (hover: hover) {
   .button:hover .button-line-horizontal {
     @apply w-10;
@@ -108,34 +157,18 @@ a {
   .social-icon:hover {
     @apply opacity-100;
   }
-}
-
-.technology-button {
-  color: rgb(var(--light-col));
-  border: 1px solid rgb(var(--light-col));
-  background-color: rgba(var(--light-col), 0.2);
-  @apply py-1 px-4 rounded-full w-fit font-normal;
-}
-
-.technology-button-alt {
-  background-color: rgb(var(--light-col));
-  @apply text-white font-semibold;
-}
-
-.circle-letter {
-  font-size: var(--font-size-xl);
-  color: rgb(var(--white));
-  @apply opacity-100;
-}
-
-.projects-overlay {
-  background-image: linear-gradient(
-    270deg,
-    rgb(var(--dark-col)),
-    rgb(var(--dark-col)),
-    rgb(var(--dark-col), 0)
-  );
-  @apply absolute w-full h-screen -z-10;
+  .circle-line-element__circle-letter-container:hover {
+    @apply scale-125;
+  }
+  .circle-line-element__circle-letter-container:hover .circle-line-element__circle {
+    @apply opacity-100;
+  }
+  .circle-line-element__circle-letter-container:hover .circle-line-element__letter-box {
+    @apply border-black;
+  }
+  .circle-line-element__circle-letter-container:hover .circle-line-element__letter {
+    @apply text-black;
+  }
 }
 
 @layer utilities {

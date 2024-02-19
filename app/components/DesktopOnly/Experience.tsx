@@ -12,7 +12,7 @@ import HomeUp from '../NavButtons/Home/HomeUp';
 import AboutUp from '../NavButtons/About/AboutUp';
 import ProjectsButton from '../NavButtons/Projects/Projects';
 
-import ConnectedCirclesDescendingScale from '../../components/ConnectedCirclesDescendingScale';
+import CircleLineElement from '../CircleLineElement';
 import InfoCard from '../../components/InfoCard';
 import Footer from './Footer';
 
@@ -47,9 +47,18 @@ const Experience = () => {
       <main className='main justify-end'>
         <div className='flex pl-48 items-end'>
           <div className='w-1/2'>
-            <ConnectedCirclesDescendingScale
-              letter={infoCardExperience[activeIndex].letter}
-            />
+            <div className='w-[243px]'>
+              {infoCardExperience.map((item, index) => {
+                const { letter } = item;
+                return (
+                  <CircleLineElement
+                    key={index}
+                    index={index}
+                    letter={letter}
+                  />
+                );
+              })}
+            </div>
           </div>
           <div className='flex flex-col w-1/2 gap-16'>
             <div className='flex flex-col mt-[-320px]'>
@@ -98,10 +107,7 @@ const Experience = () => {
                   navClick={navClick}
                   isLong={true}
                 />
-                <AboutUp
-                  onClick={triggerNavClick}
-                  navClick={navClick}
-                />
+                <AboutUp onClick={triggerNavClick} navClick={navClick} />
               </div>
               <div>
                 <ProjectsButton onClick={triggerNavClick} navClick={navClick} />
