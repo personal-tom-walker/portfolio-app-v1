@@ -65,7 +65,7 @@ a {
 @media screen and (min-width: 1024px) {
   .main {
     height: calc(100vh - 80px);
-    @apply flex-row max-w-none py-10;
+    @apply flex-row max-w-[1400px] py-10;
   }
 }
 

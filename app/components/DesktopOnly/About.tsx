@@ -12,6 +12,7 @@ import ExperienceButton from '../NavButtons/Experience/Experience';
 
 import ConnectedCirclesDescendingScale from '../../components/ConnectedCirclesDescendingScale';
 import MainContent from '../../components/MainContent';
+import Footer from './Footer';
 
 const About = () => {
   const router = useRouter();
@@ -39,29 +40,34 @@ const About = () => {
 
   return (
     <>
-      <nav className='flex h-20 pt-5 pl-10 pr-5 justify-between'>
-        <HomeButton
-          onClick={triggerNavClick}
-          navClick={navClick}
-          isLong={false}
-        />
-        <ProjectsButton onClick={triggerNavClick} navClick={navClick} />
-      </nav>
-      <main className='main'>
-        <div className='relative flex'>
-          <ConnectedCirclesDescendingScale isImg={true} />
-        </div>
-        <div className='flex mt-[-180px]'>
-          <MainContent content={mainContentAbout} />
+      <main className='main justify-end'>
+        <div className='flex pl-48 items-end'>
+          <div className='w-1/2'>
+            <ConnectedCirclesDescendingScale isImg={true} />
+          </div>
+          <div className='flex flex-col w-1/2 gap-16'>
+            <MainContent content={mainContentAbout} />
+            <nav className='w-full h-16 flex justify-between'>
+              <div className='flex'>
+                <HomeButton
+                  onClick={triggerNavClick}
+                  navClick={navClick}
+                  isLong={false}
+                />
+                <ExperienceButton
+                  onClick={triggerNavClick}
+                  navClick={navClick}
+                  isLong={false}
+                />
+              </div>
+              <div>
+                <ProjectsButton onClick={triggerNavClick} navClick={navClick} />
+              </div>
+            </nav>
+          </div>
         </div>
       </main>
-      <footer className='w-full h-20 flex justify-end pb-5 px-10'>
-        <ExperienceButton
-          onClick={triggerNavClick}
-          navClick={navClick}
-          isLong={false}
-        />
-      </footer>
+      <Footer />
     </>
   );
 };
