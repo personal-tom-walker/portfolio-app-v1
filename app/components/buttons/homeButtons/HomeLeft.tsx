@@ -1,6 +1,6 @@
 import { buttonTypes } from '@/app/constants/global';
 
-const Home = ({ onClick, navClick }: { onClick: any; navClick: any }) => {
+const HomeLeft = ({ onClick, navClick }: { onClick: any; navClick: any }) => {
   return (
     <div className='flex items-end w-[100px] h-fit'>
       <div
@@ -21,4 +21,4 @@ const Home = ({ onClick, navClick }: { onClick: any; navClick: any }) => {
   );
 };
 
-export default Home;
+export default HomeLeft;

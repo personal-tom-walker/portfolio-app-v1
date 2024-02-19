@@ -26,7 +26,7 @@ const Home = () => {
   };
   return (
     <>
-      <nav className='flex h-20 pt-9 pl-10 pr-5 justify-end bg-transparent	'>
+      <nav className='flex h-20 pt-9 pl-10 pr-5 justify-end bg-transparent'>
         <ProjectsButton onClick={triggerNavClick} navClick={navClick} />
       </nav>
       <main className='main justify-end'>
