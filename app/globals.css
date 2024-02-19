@@ -70,6 +70,31 @@ a {
   }
 }
 
+.sidebar-tech-item__progress-container {
+  animation-duration: 1.6s;
+  animation-name: progress-appear;
+  animation-delay: 0;
+  @apply h-[2px];
+}
+
+.sidebar-tech-item__progress {
+  animation-duration: 1.6s;
+  animation-name: progress-grow;
+  animation-delay: 0s;
+  background-color: rgb(var(--light-col));
+  @apply w-full h-full;
+}
+
+@keyframes progress-appear {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes progress-grow {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
 .button-text {
   font-size: var(--font-size-md);
   font-weight: var(--font-bold);

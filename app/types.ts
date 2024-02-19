@@ -8,6 +8,11 @@ export interface SocialItemsProps {
   item: SocialsObj;
 }
 
+export interface SidebarTechItemProps {
+  name: string;
+  width: string;
+}
+ 
 export interface CircleLineElementProps {
   index: number;
   letter: string;

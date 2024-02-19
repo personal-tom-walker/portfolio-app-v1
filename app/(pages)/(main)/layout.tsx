@@ -5,21 +5,28 @@ import { useContext } from 'react';
 import { DEVICE_NAMES } from '../../constants/global';
 import { DeviceContext } from '../../hooks/useContext/context';
 
-import ExperienceMobile from '../../components/MobileOnly/Experience';
 import SocialsSidebar from '../../components/MobileOnly/SocialsSidebar';
+import TechSidebar from '../../components/DesktopOnly/TechSidebar';
 
-import ExperienceDesktop from '../../components/DesktopOnly/Experience';
-
-export default function About() {
+export default function Main({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   const device = useContext(DeviceContext);
 
   if (device === DEVICE_NAMES.MOBILE) {
     return (
       <>
-        <ExperienceMobile />
+        {children}
         <SocialsSidebar />
       </>
     );
   }
-  return <ExperienceDesktop />;
+  return (
+    <>
+      {children}
+      <TechSidebar />
+    </>
+  );
 }
