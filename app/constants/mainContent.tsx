@@ -96,4 +96,41 @@ export const infoCardProjects = [
       technologies.css,
     ],
   },
+  {
+    letter: 'L',
+    company: 'Lost Dream Studio',
+    link: 'https://lostdreamstudio.com',
+    dateRange: 'Sep 2023 - Oct 2023',
+    boldText: 'Full service web-design & development',
+    normalText:
+      'Included: Discovery, Design, Build in WordPress with GeneratePress, ElementorPro & Custom Scripts to Requirements, Site-Speed Optimisation, GA4 setup, Branded Email Design & Development & Testing',
+    technologies: [
+      technologies.wordpress,
+      technologies.elementor,
+      technologies.css,
+      technologies.javascript,
+      technologies.siteground,
+    ],
+    ownDesign: true,
+  },
+  {
+    letter: 'B',
+    company: 'BrewBroker',
+    link: 'https://brewbroker.com',
+    dateRange: 'Dec 2021 - Aug 2023',
+    normalText:
+      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus',
+    technologies: [
+      technologies.react,
+      technologies.redux,
+      technologies.bootstrapCSS,
+      technologies.javascript,
+      technologies.stripe,
+      technologies.circleCI,
+      technologies.heroku,
+      technologies.wordpress,
+      technologies.elementor,
+      technologies.css,
+    ],
+  },
 ];

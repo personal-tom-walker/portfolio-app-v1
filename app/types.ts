@@ -53,3 +53,5 @@ interface InfoCardContentProps {
 export interface InfoCardProps {
   content: InfoCardContentProps;
 }
+
+// NAV BUTTONS

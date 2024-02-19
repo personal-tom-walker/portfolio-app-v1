@@ -4,14 +4,15 @@ const HomeUp = ({
   onClick,
   navClick,
   isLong,
+  isTop,
 }: {
   onClick: any;
   navClick: any;
   isLong: boolean;
-  }) => {
-  
+  isTop: boolean;
+}) => {
   return (
-    <div className='flex items-end w-[100px]'>
+    <div className={`flex w-[100px] ${isTop ? 'items-start mt-[-15px]' : 'items-end'}`}>
       <div
         role='button'
         onClick={() => onClick(buttonTypes.home)}

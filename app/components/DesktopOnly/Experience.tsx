@@ -33,9 +33,9 @@ const Experience = () => {
 
   return (
     <>
-      <main className='main justify-end'>
-        <div className='flex pl-48 items-end'>
-          <div className='w-1/2'>
+      <main className='main'>
+        <div className='flex pl-48 h-full'>
+          <div className='flex w-1/2 items-center justify-center'>
             <div className='w-[243px]'>
               {infoCardExperience.map((item, index) => {
                 const { letter } = item;
@@ -51,45 +51,9 @@ const Experience = () => {
               })}
             </div>
           </div>
-          <div className='flex flex-col w-1/2 gap-16'>
-            <div className='flex flex-col mt-[-320px]'>
-              <div
-                role='button'
-                onClick={() =>
-                  setActiveIndex(
-                    activeIndex === 0
-                      ? infoCardExperience.length - 1
-                      : activeIndex - 1
-                  )
-                }
-                className='w-fit mb-4'
-              >
-                <Image
-                  src={'/blue-arrow.svg'}
-                  alt='arrow up'
-                  height={25}
-                  width={18}
-                />
-              </div>
+          <div className='flex flex-col w-1/2 gap-16 justify-end'>
+            <div className='flex flex-col'>
               <InfoCard content={infoCardExperience[activeIndex]} />
-              <div
-                role='button'
-                onClick={() =>
-                  setActiveIndex(
-                    activeIndex === infoCardExperience.length - 1
-                      ? 0
-                      : activeIndex + 1
-                  )
-                }
-              >
-                <Image
-                  src={'/blue-arrow.svg'}
-                  alt='arrow up'
-                  height={25}
-                  width={18}
-                  className='w-fit mt-4 rotate-180'
-                />
-              </div>
             </div>
             <nav className='w-full h-16 flex justify-between'>
               <div className='flex'>
@@ -100,7 +64,7 @@ const Experience = () => {
                 />
                 <AboutUp onClick={triggerNavClick} navClick={navClick} />
               </div>
-              <div>
+              <div className='flex items-end'>
                 <ProjectsButton onClick={triggerNavClick} navClick={navClick} />
               </div>
             </nav>

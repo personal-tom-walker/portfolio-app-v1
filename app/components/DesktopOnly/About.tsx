@@ -42,6 +42,7 @@ const About = () => {
                   onClick={triggerNavClick}
                   navClick={navClick}
                   isLong={false}
+                  isTop={true}
                 />
                 <ExperienceButton
                   onClick={triggerNavClick}
