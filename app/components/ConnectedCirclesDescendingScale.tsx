@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { CircleContentProps } from '../types';
 import { breakpoints } from '../constants/global';
-// import useWindowWidth from '../hooks/useWindowWidth';
+import useWindowWidth from '../hooks/useWindowWidth';
 
 import Img from '../../public/profile-line-drawing-200.png';
 import DesktopImg from '../../public/profile-line-drawing-350.png';
@@ -15,24 +15,8 @@ const ConnectedCirclesDescendingScale = ({
   isImg = false,
   letter,
 }: CircleContentProps) => {
-  // const windowWidth = useWindowWidth();
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== 'undefined' ? window.innerWidth : null
-  );
+  const windowWidth = useWindowWidth();
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-      };
-      window.addEventListener('resize', handleResize);
-
-      // Clean up the event listener when the component unmounts
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }
-  }, []);
 
   return (
     <>
