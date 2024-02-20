@@ -9,24 +9,24 @@ export default function DeviceLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const windowWidth = useWindowWidth();
-  if (windowWidth) {
-    const getDeviceContext = () => {
-      if (windowWidth >= breakpoints.desktop) {
-        return DEVICE_NAMES.DESKTOP;
-      }
-      if (windowWidth >= breakpoints.tablet) {
-        return DEVICE_NAMES.TABLET;
-      }
-      return DEVICE_NAMES.MOBILE;
-    };
+  // const windowWidth = useWindowWidth();
+  // if (windowWidth) {
+  //   const getDeviceContext = () => {
+  //     if (windowWidth >= breakpoints.desktop) {
+  //       return DEVICE_NAMES.DESKTOP;
+  //     }
+  //     if (windowWidth >= breakpoints.tablet) {
+  //       return DEVICE_NAMES.TABLET;
+  //     }
+  //     return DEVICE_NAMES.MOBILE;
+  //   };
 
-    return (
-      <DeviceContext.Provider value={getDeviceContext()}>
-        {children}
-      </DeviceContext.Provider>
-    );
-  }
+  //   return (
+  //     <DeviceContext.Provider value={getDeviceContext()}>
+  //       {children}
+  //     </DeviceContext.Provider>
+  //   );
+  // }
   return (
     <div className='flex items-center justify-center h-screen'>
       <h2>{'Loading...'}</h2>
