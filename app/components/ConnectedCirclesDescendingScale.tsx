@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { CircleContentProps } from '../types';
 import { breakpoints } from '../constants/global';
 import useWindowWidth from '../hooks/useWindowWidth';
+import useWindowHeight from '../hooks/useWindowHeight';
 
 import Img from '../../public/profile-line-drawing-200.png';
 import DesktopImg from '../../public/profile-line-drawing-350.png';
@@ -15,13 +16,14 @@ const ConnectedCirclesDescendingScale = ({
   letter,
 }: CircleContentProps) => {
   const windowWidth = useWindowWidth();
+  const windowHeight = useWindowHeight();
   return (
     <>
-      {windowWidth ? (
+      {windowWidth && windowHeight ? (
         <div
           className={`flex flex-col mr-[-20px] ${
             windowWidth <= breakpoints.desktop ? 'w-[350px]' : 'w-[650px]'
-          }`}
+          } ${windowHeight <= 920 ? 'scale-75 mb-[-90px]' : ''}`}
         >
           <div
             className={`overflow-hidden rounded-full mb-[-4px] ${
