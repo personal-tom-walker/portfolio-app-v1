@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext } from 'react';
 import { DEVICE_NAMES } from '@/app/constants/global';
 
