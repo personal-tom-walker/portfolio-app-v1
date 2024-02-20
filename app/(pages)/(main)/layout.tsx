@@ -1,7 +1,6 @@
 'use client';
 
 import { useContext } from 'react';
-
 import { DEVICE_NAMES } from '../../constants/global';
 import { DeviceContext } from '../../hooks/useContext/context';
 
