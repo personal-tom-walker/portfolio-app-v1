@@ -1,3 +1,5 @@
+'use client';
+
 import { DEVICE_NAMES, breakpoints } from '../../../constants/global';
 import { DeviceContext } from '../../../hooks/useContext/context';
 import useWindowWidth from '../../../hooks/useWindowWidth';
