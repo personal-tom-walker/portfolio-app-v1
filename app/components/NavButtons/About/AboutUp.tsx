@@ -2,7 +2,7 @@ import { buttonTypes } from '@/app/constants/global';
 
 const AboutUp = ({ onClick, navClick }: { onClick: any; navClick: any }) => {
   return (
-    <div className='flex items-end w-[100px]'>
+    <div className='flex items-end w-[80px]'>
       <div
         role='button'
         onClick={() => onClick(buttonTypes.about)}

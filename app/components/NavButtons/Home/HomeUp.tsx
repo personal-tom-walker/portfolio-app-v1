@@ -12,13 +12,13 @@ const HomeUp = ({
   isTop: boolean;
 }) => {
   return (
-    <div className={`flex w-[100px] ${isTop ? 'items-start mt-[-15px]' : 'items-end'}`}>
+    <div className={`flex w-[70px] ${isTop ? 'items-start mt-[-16px]' : 'items-end'}`}>
       <div
         role='button'
         onClick={() => onClick(buttonTypes.home)}
         className='button'
       >
-        <span className='button-text text-right w-[70px] pt-4'>
+        <span className='button-text text-right w-[55px] pt-4'>
           {buttonTypes.home}
         </span>
         <div className='relative flex h-[23px] ml-[-2px] items-end'>

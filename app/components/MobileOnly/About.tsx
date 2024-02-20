@@ -39,24 +39,29 @@ const About = () => {
 
   return (
     <>
-      <nav className='flex h-20 pt-5 pl-10 pr-5 justify-between'>
+      <nav className='flex h-20 pt-5 pl-10 pr-5 z-10 justify-between'>
         <HomeButton
           onClick={triggerNavClick}
           navClick={navClick}
           isLong={false}
+          isTop={false}
         />
         <ProjectsButton onClick={triggerNavClick} navClick={navClick} />
       </nav>
-      <main className='main'>
-        <div className='relative flex'>
-          <ConnectedCirclesDescendingScale isImg={true} />
-        </div>
-        <div className='flex mt-[-180px]'>
+      <main className='main justify-end'>
+        <div className='flex overflow-y-scroll max-h-full'>
           <MainContent content={mainContentAbout} />
+        </div>
+        <div className='absolute bottom-48 flex z-[-10]'>
+          <ConnectedCirclesDescendingScale isImg={true} />
         </div>
       </main>
       <footer className='w-full h-20 flex justify-end pb-5 px-10'>
-        <ExperienceButton onClick={triggerNavClick} navClick={navClick} isLong={false} />
+        <ExperienceButton
+          onClick={triggerNavClick}
+          navClick={navClick}
+          isLong={false}
+        />
       </footer>
     </>
   );

@@ -34,7 +34,7 @@ const Experience = () => {
   return (
     <>
       <main className='main'>
-        <div className='flex pl-48 h-full'>
+        <div className='flex pl-32 h-full'>
           <div className='flex w-1/2 items-center justify-center'>
             <div className='w-[243px]'>
               {infoCardExperience.map((item, index) => {
@@ -52,15 +52,18 @@ const Experience = () => {
             </div>
           </div>
           <div className='flex flex-col w-1/2 gap-16 justify-end'>
-            <div className='flex flex-col'>
-              <InfoCard content={infoCardExperience[activeIndex]} />
+            <div className='flex flex-col overflow-y-scroll mr-[-20px]'>
+              <div className='mr-[20px]'>
+                <InfoCard content={infoCardExperience[activeIndex]} />
+              </div>
             </div>
-            <nav className='w-full h-16 flex justify-between'>
+            <nav className='w-full h-16 flex justify-between' dir='ltr'>
               <div className='flex'>
                 <HomeUp
                   onClick={triggerNavClick}
                   navClick={navClick}
                   isLong={true}
+                  isTop={false}
                 />
                 <AboutUp onClick={triggerNavClick} navClick={navClick} />
               </div>

@@ -48,28 +48,30 @@ export default function Projects() {
             </nav>
           </div>
         </div>
-        <div className='flex flex-col w-1/2'>
-          <div className='flex flex-col'>
-            {activeIndex !== 0 && (
-              <div
-                role='button'
-                onClick={() =>
-                  setActiveIndex(
-                    activeIndex === 0
-                      ? infoCardProjects.length - 1
-                      : activeIndex - 1
-                  )
-                }
-                className='w-fit mb-4'
-              >
-                <Image
-                  src={'/blue-arrow.svg'}
-                  alt='arrow up'
-                  height={25}
-                  width={18}
-                />
-              </div>
-            )}
+        <div
+          className='flex flex-col w-1/2 overflow-y-scroll max-h-full ml-[-60px]'
+          dir='rtl'
+        >
+          <div className='flex flex-col ml-[60px]' dir='ltr'>
+            <div
+              role='button'
+              onClick={() =>
+                setActiveIndex(
+                  activeIndex === 0
+                    ? infoCardProjects.length - 1
+                    : activeIndex - 1
+                )
+              }
+              className={`w-fit mb-4 ${activeIndex === 0 ? 'invisible' : ''}`}
+            >
+              <Image
+                src={'/blue-arrow.svg'}
+                alt='arrow up'
+                height={25}
+                width={18}
+                className={activeIndex === 0 ? 'invisible' : ''}
+              />
+            </div>
             <InfoCard content={infoCardProjects[activeIndex]} />
             <div className='my-5'></div>
             <InfoCard content={infoCardProjects[activeIndex + 1]} />

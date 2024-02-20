@@ -7,7 +7,7 @@ import SocialItem from '../SocialItem';
 
 const Footer = () => {
   return (
-    <footer className='flex justify-between items-center h-20 pb-10 px-10'>
+    <footer className='absolute flex justify-between items-center bottom-0 h-20 pb-10 px-10 z-20 w-full bg-dark'>
       <Link
         href={`mailto:${PROFESSIONAL_EMAIL}`}
         className='text-white font-extralight text-sm'

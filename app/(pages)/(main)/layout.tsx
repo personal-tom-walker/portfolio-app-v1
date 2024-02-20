@@ -18,15 +18,15 @@ export default function Main({
   if (device === DEVICE_NAMES.MOBILE) {
     return (
       <>
-        {children}
         <SocialsSidebar />
+        {children}
       </>
     );
   }
   return (
     <>
-      {children}
       <TechSidebar />
+      {children}
     </>
   );
 }

@@ -2,7 +2,7 @@ import { buttonTypes } from '@/app/constants/global';
 
 const AboutDown = ({ onClick, navClick }: { onClick: any; navClick: any }) => {
   return (
-    <div className='w-[100px]'>
+    <div className='w-[80px]'>
       <div
         role='button'
         onClick={() => onClick(buttonTypes.about)}

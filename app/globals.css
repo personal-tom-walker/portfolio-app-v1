@@ -35,6 +35,19 @@
   }
 }
 
+::-webkit-scrollbar {
+  background-color: rgba(var(--white), 0.02);
+  @apply rounded-full w-1 pl-10 h-10;
+}
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+  @apply rounded-full;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--light-col));
+  @apply rounded-full;
+}
+
 body {
   @apply min-h-screen;
   color: rgb(var(--white));
@@ -58,12 +71,16 @@ a {
   @apply font-bold;
 }
 
-.main {
-  height: calc(100vh - 160px);
-  @apply flex flex-col items-end overflow-visible pb-10 px-10 max-w-[400px] m-auto;
+.bg-dark {
+  background-color: rgb(var(--dark-col));
 }
 
-@media screen and (min-width: 1024px) {
+.main {
+  height: calc(100vh - 160px);
+  @apply flex flex-col items-end pb-10 px-10 max-w-[400px] m-auto;
+}
+
+@media screen and (min-width: 768px) {
   .main {
     height: calc(100vh - 80px);
     @apply flex-row max-w-[1400px] py-10;
@@ -193,21 +210,6 @@ a {
   .social-icon:hover {
     @apply opacity-100;
   }
-  /* .circle-line-element__circle-letter-container:hover {
-    @apply scale-125;
-  }
-  .circle-line-element__circle-letter-container:hover
-    .circle-line-element__circle {
-    @apply opacity-100;
-  }
-  .circle-line-element__circle-letter-container:hover
-    .circle-line-element__letter-box {
-    @apply border-black;
-  }
-  .circle-line-element__circle-letter-container:hover
-    .circle-line-element__letter {
-    @apply text-black;
-  } */
 }
 
 @layer utilities {

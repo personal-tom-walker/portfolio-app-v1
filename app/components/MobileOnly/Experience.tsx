@@ -44,11 +44,16 @@ const Experience = () => {
   return (
     <>
       <nav className='flex h-20 pt-10 pl-10 pr-5 justify-between'>
-        <HomeUp onClick={triggerNavClick} navClick={navClick} isLong={true} />
+        <HomeUp
+          onClick={triggerNavClick}
+          navClick={navClick}
+          isLong={true}
+          isTop={false}
+        />
         <AboutUp onClick={triggerNavClick} navClick={navClick} />
       </nav>
-      <main className='main mt-10'>
-        <div className='relative flex'>
+      <main className='main mt-10 overflow-y-scroll'>
+        <div className='relative flex z-[-10]'>
           <ConnectedCirclesDescendingScale
             letter={infoCardExperience[activeIndex].letter}
           />

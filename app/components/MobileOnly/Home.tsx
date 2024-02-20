@@ -43,7 +43,7 @@ const Home = () => {
         <ProjectsButton onClick={triggerNavClick} navClick={navClick} />
       </nav>
       <main className='main justify-end'>
-        <div className='relative flex'>
+        <div className='relative flex z-[-10]'>
           <ConnectedCirclesDescendingScale isHome={true} letter={'T'} />
         </div>
         <div className='flex mt-[-180px]'>
@@ -52,7 +52,11 @@ const Home = () => {
       </main>
       <nav className='w-full h-20 flex justify-between pb-5 px-10'>
         <AboutDown onClick={triggerNavClick} navClick={navClick} />
-        <ExperienceButton onClick={triggerNavClick} navClick={navClick} isLong={true} />
+        <ExperienceButton
+          onClick={triggerNavClick}
+          navClick={navClick}
+          isLong={true}
+        />
       </nav>
     </>
   );

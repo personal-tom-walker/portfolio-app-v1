@@ -1,7 +1,6 @@
 import { SidebarTechItemProps } from '../types';
 
 const SidebarTechItem = ({ name, width }: SidebarTechItemProps) => {
-  console.log('width', width);
   return (
     <div className='flex flex-col'>
       <div className='rounded-e-3xl opacity-20 bg-white h-12 w-full'></div>

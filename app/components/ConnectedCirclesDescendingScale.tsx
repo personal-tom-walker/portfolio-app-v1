@@ -29,12 +29,12 @@ const ConnectedCirclesDescendingScale = ({
   return (
     <div
       className={`flex flex-col mr-[-20px] ${
-        windowWidth < breakpoints.desktop ? 'w-[350px]' : 'w-[650px]'
+        windowWidth <= breakpoints.desktop ? 'w-[350px]' : 'w-[650px]'
       }`}
     >
       <div
         className={`overflow-hidden rounded-full mb-[-4px] ${
-          windowWidth < breakpoints.desktop
+          windowWidth <= breakpoints.desktop
             ? 'w-64 h-64'
             : 'w-[450px] h-[450px]'
         } ${
@@ -45,10 +45,10 @@ const ConnectedCirclesDescendingScale = ({
       >
         {isImg && (
           <Image
-            src={windowWidth < breakpoints.desktop ? Img : DesktopImg}
+            src={windowWidth <= breakpoints.desktop ? Img : DesktopImg}
             alt={'profile line drawing'}
             className={`relative m-auto ${
-              windowWidth < breakpoints.desktop ? 'mt-[15px]' : 'mt-[28px]'
+              windowWidth <= breakpoints.desktop ? 'mt-[15px]' : 'mt-[28px]'
             }`}
           />
         )}
@@ -73,14 +73,14 @@ const ConnectedCirclesDescendingScale = ({
       <div className='flex flex-col items-end'>
         <div
           className={`w-16 border-b-2 border-white opacity-20 mb-[12px] ${
-            windowWidth < breakpoints.desktop
+            windowWidth <= breakpoints.desktop
               ? 'w-16 mr-[90px] rotate-[50deg]'
               : 'w-[132px] mr-[173px] rotate-[47deg]'
           }`}
         ></div>
         <div
           className={`bg-white opacity-20 rounded-full ${
-            windowWidth < breakpoints.desktop
+            windowWidth <= breakpoints.desktop
               ? 'w-32 h-32'
               : 'w-[225px] h-[225px]'
           }`}
@@ -89,14 +89,14 @@ const ConnectedCirclesDescendingScale = ({
       <div className='flex flex-col items-end'>
         <div
           className={`border-b-2 border-white opacity-20 ${
-            windowWidth < breakpoints.desktop
+            windowWidth <= breakpoints.desktop
               ? 'w-8 rotate-[-50deg] mr-[95px] mb-[5px]'
               : 'w-[57px] rotate-[-46deg] mr-[182px] mt-[-12px] mb-[6px]'
           }`}
         ></div>
         <div
           className={`bg-white opacity-20 rounded-full ${
-            windowWidth < breakpoints.desktop
+            windowWidth <= breakpoints.desktop
               ? 'w-16 h-16 mr-[109px]'
               : 'w-[100px] h-[100px] mr-[215px]'
           }`}

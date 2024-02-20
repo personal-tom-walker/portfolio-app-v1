@@ -19,7 +19,7 @@ const InfoCard = ({ content }: InfoCardProps) => {
   } = content;
   const device = useContext(DeviceContext);
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col mt-[10px]'>
       <Link
         href={link}
         target='_blank'
@@ -40,7 +40,9 @@ const InfoCard = ({ content }: InfoCardProps) => {
         {dateRange}
       </span>
       <p
-        className={`font-bold mb-2 ${device === DEVICE_NAMES.MOBILE ? '' : 'text-xl'}`}
+        className={`font-bold mb-2 ${
+          device === DEVICE_NAMES.MOBILE ? '' : 'text-xl'
+        }`}
       >
         {boldText}
       </p>

@@ -10,7 +10,7 @@ const Experience = ({
   isLong: boolean;
 }) => {
   return (
-    <div className='w-[120px]'>
+    <div className='w-[110px]'>
       <div
         role='button'
         onClick={() => onClick(buttonTypes.experience)}
