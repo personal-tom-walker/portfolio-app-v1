@@ -8,6 +8,7 @@ import { breakpoints } from '../constants/global';
 
 import Img from '../../public/profile-line-drawing-200.png';
 import DesktopImg from '../../public/profile-line-drawing-350.png';
+import { useEffect, useState } from 'react';
 
 const ConnectedCirclesDescendingScale = ({
   isHome = false,
@@ -15,10 +16,27 @@ const ConnectedCirclesDescendingScale = ({
   letter,
 }: CircleContentProps) => {
   // const windowWidth = useWindowWidth();
+    const [windowWidth, setWindowWidth] = useState(
+      typeof window !== undefined ? window.innerWidth : null
+    );
+
+    useEffect(() => {
+      if (typeof window !== 'undefined') {
+        const handleResize = () => {
+          setWindowWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', handleResize);
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }
+    }, []);
 
   return (
     <>
-      {/* {windowWidth ? (
+      {windowWidth ? (
         <div
           className={`flex flex-col mr-[-20px] ${
             windowWidth <= breakpoints.desktop ? 'w-[350px]' : 'w-[650px]'
@@ -96,8 +114,8 @@ const ConnectedCirclesDescendingScale = ({
           </div>
         </div>
       ) : (
-        <></>
-      )} */}
+        null
+      )}
     </>
   );
 };
