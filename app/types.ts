@@ -30,7 +30,7 @@ export interface MainContentProps {
   title?: string;
   subtitle?: string;
   text: string;
-  isHome?: boolean;
+  isBold?: boolean;
 }
 
 interface Technologies {

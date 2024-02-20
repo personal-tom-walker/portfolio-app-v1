@@ -4,17 +4,17 @@ export const mainContentHome = {
   title: 'Tom Walker',
   subtitle: 'Software Developer',
   text: 'Full Stack Ability | Front End Specialist',
-  isHome: true,
+  isBold: true,
 };
 
 export const mainContentAbout = {
-  text: 'Hey, here\'s a bit about me :) I\'ve been developing technical web-based technical solutions for the commercial world for over 4 years now. Though most the technologies I currently use (and continue to learn) are self-taught, I\'ve had formal training via School of Code (2021). Feel free to explore my experience and past projects for a clearer grasp of my approach and capabilities',
+  text: "Hey, here's a bit about me... I've been developing technical web-based technical solutions for the commercial world for over 4 years now. Though most the technologies I currently use (and continue to learn) are self-taught, I've had formal training via School of Code (2021). Feel free to explore my experience and past projects :)",
+  isBold: true,
 };
 
 export const infoCardExperience = [
   {
     letter: 'F',
-    role: 'All Sorts',
     company: 'Freelance',
     link: '/',
     dateRange: 'Sep 2023 - Feb 2024',
