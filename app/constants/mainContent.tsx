@@ -8,7 +8,7 @@ export const mainContentHome = {
 };
 
 export const mainContentAbout = {
-  text: "Hey, here's a bit about me... I've been developing technical web-based technical solutions for the commercial world for over 4 years now. Though most the technologies I currently use (and continue to learn) are self-taught, I've had formal training via School of Code (2021). Feel free to explore my experience and past projects :)",
+  text: "Hey, here's a bit about me... I've been developing web-based solutions for the commercial world for over 4 years now. Though most the technologies I currently use (and continue to learn) are self-taught, I've had formal training via School of Code (2021). Feel free to explore my experience and past projects :)",
   isBold: true,
 };
 

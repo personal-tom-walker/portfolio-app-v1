@@ -32,13 +32,18 @@ const Home = () => {
         className='absolute w-full h-screen bg-cover bg-no-repeat bg-right-top -z-10'
         style={{ backgroundImage: `url(${HomeBg.src})` }}
       ></div>
+      <div className='home-overlay'></div>
       <main className='main justify-end'>
         <div className='flex flex-col w-1/2 gap-16 pl-24'>
           <MainContent content={mainContentHome} />
           <nav className='w-full h-16 flex justify-between'>
             <div className='flex'>
               <AboutButton onClick={triggerNavClick} navClick={navClick} />
-              <ExperienceButton onClick={triggerNavClick} navClick={navClick} isLong={true} />
+              <ExperienceButton
+                onClick={triggerNavClick}
+                navClick={navClick}
+                isLong={true}
+              />
             </div>
             <div>
               <ProjectsButton onClick={triggerNavClick} navClick={navClick} />
