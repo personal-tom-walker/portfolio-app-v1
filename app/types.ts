@@ -30,6 +30,7 @@ export interface MainContentProps {
   title?: string;
   subtitle?: string;
   text: string;
+  isHome?: boolean;
 }
 
 interface Technologies {
@@ -42,7 +43,7 @@ interface Technologies {
 interface InfoCardContentProps {
   role?: string;
   company: string;
-  link: string;
+  link: string | null;
   dateRange: string;
   boldText?: string;
   normalText: string;

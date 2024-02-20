@@ -36,7 +36,7 @@ const About = () => {
           </div>
           <div className='flex flex-col w-1/2 gap-16'>
             <MainContent content={mainContentAbout} />
-            <nav className='w-full h-16 flex justify-between'>
+            <nav className='w-full h-16 flex justify-between pl-2'>
               <div className='flex'>
                 <HomeButton
                   onClick={triggerNavClick}

@@ -20,22 +20,30 @@ const InfoCard = ({ content }: InfoCardProps) => {
   const device = useContext(DeviceContext);
   return (
     <div className='flex flex-col mt-[10px]'>
-      <Link
-        href={link}
-        target='_blank'
-        className='flex items-start justify-between'
-      >
-        <h2 className='font-semibold text-2xl capitalize'>
-          {role ? `${role} - ${company}` : company}
-        </h2>
-        <Image
-          src={'external-link-blue-crop.svg'}
-          alt='external link icon'
-          height={10}
-          width={20}
-          className='mt-[-10px] ml-2'
-        />
-      </Link>
+      {link ? (
+        <Link
+          href={link}
+          target='_blank'
+          className='flex items-start justify-between'
+        >
+          <h2 className='font-semibold text-2xl capitalize'>
+            {role ? `${role} - ${company}` : company}
+          </h2>
+          <Image
+            src={'external-link-blue-crop.svg'}
+            alt='external link icon'
+            height={10}
+            width={20}
+            className='mt-[-10px] ml-2'
+          />
+        </Link>
+      ) : (
+        <div className='flex items-start justify-between'>
+          <h2 className='font-semibold text-2xl capitalize'>
+            {role ? `${role} - ${company}` : company}
+          </h2>
+        </div>
+      )}
       <span className='text-base font-light text-white opacity-50 mb-6'>
         {dateRange}
       </span>

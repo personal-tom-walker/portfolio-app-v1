@@ -16,13 +16,19 @@ export const breakpoints = {
 const TECHNOLOGY_NAMES = {
   WORDPRESS: 'WordPress',
   ELEMENTOR: 'Elementor',
+  WOOCOMMERCE: 'WooCommerce',
   CSS: 'CSS',
   BOOTSTRAP_CSS: 'BootstrapCSS',
   TAILWIND_CSS: 'TailwindCSS',
   JAVASCRIPT: 'JavaScript',
+  TYPESCRIPT: 'TypeScript',
+  EXTENDSCRIPT: 'ExtendScript',
   REACT: 'React',
   NEXT: 'NextJS',
   REDUX: 'Redux',
+  EXPRESS: 'express',
+  NODEJS: 'NodeJS',
+  SQL: 'SQL',
   STRIPE_API: 'StripeAPI',
   CIRCLE_CI: 'CircleCI',
   GITHUB: 'GitHub',
@@ -40,6 +46,10 @@ export const technologies = {
     name: TECHNOLOGY_NAMES.ELEMENTOR,
     link: 'https://elementor.com',
   },
+  woocommerce: {
+    name: TECHNOLOGY_NAMES.WOOCOMMERCE,
+    link: 'https://woo.com/',
+  },
   css: {
     name: TECHNOLOGY_NAMES.CSS,
     link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
@@ -56,6 +66,14 @@ export const technologies = {
     name: TECHNOLOGY_NAMES.JAVASCRIPT,
     link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
   },
+  typescript: {
+    name: TECHNOLOGY_NAMES.TYPESCRIPT,
+    link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+  },
+  extendScript: {
+    name: TECHNOLOGY_NAMES.EXTENDSCRIPT,
+    link: 'https://extendscript.docsforadobe.dev/introduction/extendscript-overview.html',
+  },
   react: {
     name: TECHNOLOGY_NAMES.REACT,
     link: 'https://react.dev',
@@ -67,6 +85,18 @@ export const technologies = {
   redux: {
     name: TECHNOLOGY_NAMES.REDUX,
     link: 'https://redux.js.org',
+  },
+  express: {
+    name: TECHNOLOGY_NAMES.EXPRESS,
+    link: 'https://expressjs.com',
+  },
+  nodejs: {
+    name: TECHNOLOGY_NAMES.NODEJS,
+    link: 'https://nodejs.org/en',
+  },
+  sql: {
+    name: TECHNOLOGY_NAMES.SQL,
+    link: 'https://www.w3schools.com/sql',
   },
   stripe: {
     name: TECHNOLOGY_NAMES.STRIPE_API,
@@ -88,10 +118,6 @@ export const technologies = {
   vercel: {
     name: TECHNOLOGY_NAMES.VERCEL,
     link: 'https://vercel.com',
-  },
-  siteground: {
-    name: TECHNOLOGY_NAMES.SITEGROUND,
-    link: 'https://www.siteground.co.uk',
   },
 };
 

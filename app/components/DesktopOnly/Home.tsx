@@ -33,7 +33,7 @@ const Home = () => {
         style={{ backgroundImage: `url(${HomeBg.src})` }}
       ></div>
       <main className='main justify-end'>
-        <div className='flex flex-col w-1/2 gap-16'>
+        <div className='flex flex-col w-1/2 gap-16 pl-24'>
           <MainContent content={mainContentHome} />
           <nav className='w-full h-16 flex justify-between'>
             <div className='flex'>
