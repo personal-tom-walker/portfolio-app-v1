@@ -10,22 +10,31 @@ import ProjectsDesktop from '../../components/DesktopOnly/Projects';
 export default function Projects() {
   const windowWidth = useWindowWidth();
   const getDeviceContext = () => {
-    if (windowWidth >= breakpoints.desktop) {
-      return DEVICE_NAMES.DESKTOP;
-    }
-    if (windowWidth >= breakpoints.tablet) {
-      return DEVICE_NAMES.TABLET;
-    }
-    return DEVICE_NAMES.MOBILE;
-  };
+    if (windowWidth) {
+      if (windowWidth >= breakpoints.desktop) {
+        return DEVICE_NAMES.DESKTOP;
+      }
+      if (windowWidth >= breakpoints.tablet) {
+        return DEVICE_NAMES.TABLET;
+      }
+      return DEVICE_NAMES.MOBILE;
+    };
+    return null;
+  }
   const device = getDeviceContext();
   return (
-    <DeviceContext.Provider value={device}>
-      {device === DEVICE_NAMES.MOBILE ? (
-        <ProjectsMobile />
+    <>
+      {!device ? (
+        <div>{'undefined window'}</div>
       ) : (
-        <ProjectsDesktop />
+        <DeviceContext.Provider value={device}>
+          {device === DEVICE_NAMES.MOBILE ? (
+            <ProjectsMobile />
+          ) : (
+            <ProjectsDesktop />
+          )}
+        </DeviceContext.Provider>
       )}
-    </DeviceContext.Provider>
+    </>
   );
 }
