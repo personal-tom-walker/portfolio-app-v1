@@ -8,7 +8,6 @@ import useWindowWidth from '../hooks/useWindowWidth';
 
 import Img from '../../public/profile-line-drawing-200.png';
 import DesktopImg from '../../public/profile-line-drawing-350.png';
-import { useEffect, useState } from 'react';
 
 const ConnectedCirclesDescendingScale = ({
   isHome = false,
@@ -16,8 +15,6 @@ const ConnectedCirclesDescendingScale = ({
   letter,
 }: CircleContentProps) => {
   const windowWidth = useWindowWidth();
-
-
   return (
     <>
       {windowWidth ? (
