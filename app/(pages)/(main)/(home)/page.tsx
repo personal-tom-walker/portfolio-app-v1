@@ -1,3 +1,5 @@
+'use client';
+
 import { DEVICE_NAMES, breakpoints } from '../../../constants/global';
 import { DeviceContext } from '../../../hooks/useContext/context';
 import useWindowWidth from '../../../hooks/useWindowWidth';
@@ -21,10 +23,9 @@ const Home = () => {
   };
   const device = getDeviceContext();
   return (
-    // <HomeMobile />
     <div>
       {!device ? (
-        <div>{'undefined window'}</div>
+        <div>loading...</div>
       ) : (
         <DeviceContext.Provider value={device}>
           {device === DEVICE_NAMES.MOBILE ? <HomeMobile /> : <HomeDesktop />}
