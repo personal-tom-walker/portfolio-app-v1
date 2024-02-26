@@ -8,7 +8,7 @@ const MainContent = ({ content }: { content: MainContentProps }) => {
       {subtitle && <h2 className='mb-12 pl-1'>{subtitle}</h2>}
       <p
         className={`pl-1 ${
-          isBold ? 'text-xl font-semibold' : 'text-lg font-extralight'
+          isBold ? 'text-xl font-semibold' : 'text-lg font-light'
         }`}
       >
         {text}

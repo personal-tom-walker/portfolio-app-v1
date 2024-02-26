@@ -48,12 +48,14 @@ const About = () => {
         />
         <ProjectsButton onClick={triggerNavClick} navClick={navClick} />
       </nav>
-      <main className='main justify-end'>
-        <div className='flex overflow-y-scroll max-h-full'>
-          <MainContent content={mainContentAbout} />
-        </div>
-        <div className='absolute bottom-48 flex z-[-10]'>
+      <main className='main'>
+        <div className='relative flex z-[-10]'>
           <ConnectedCirclesDescendingScale isImg={true} />
+        </div>
+        <div className='flex justify-end overflow-y-scroll max-h-full mt-[-180px] mr-[-20px]'>
+          <div className='mr-[20px]'>
+            <MainContent content={mainContentAbout} />
+          </div>
         </div>
       </main>
       <footer className='w-full h-20 flex justify-end pb-5 px-10'>

@@ -58,7 +58,7 @@ const Experience = () => {
             letter={infoCardExperience[activeIndex].letter}
           />
         </div>
-        <div className='flex flex-col mt-[-320px]'>
+        <div className='flex flex-col mt-[-350px]'>
           <div
             role='button'
             onClick={() =>
@@ -68,7 +68,7 @@ const Experience = () => {
                   : activeIndex - 1
               )
             }
-            className='w-fit mb-4'
+            className='w-fit mb-2'
           >
             <Image
               src={'/blue-arrow.svg'}
@@ -93,7 +93,7 @@ const Experience = () => {
               alt='arrow up'
               height={25}
               width={18}
-              className='w-fit mt-4 rotate-180'
+              className='w-fit mt-2 rotate-180'
             />
           </div>
         </div>

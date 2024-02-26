@@ -31,13 +31,13 @@ export default function Projects() {
       <nav className='flex h-20 pt-9 pl-5 pr-5'>
         <HomeButton onClick={triggerNavClick} navClick={navClick} />
       </nav>
-      <main className='main mt-10'>
+      <main className='main mt-10 overflow-y-scroll mr-[-20px]'>
         <div className='relative flex z-[-10]'>
           <ConnectedCirclesDescendingScale
             letter={infoCardProjects[activeIndex].letter}
           />
         </div>
-        <div className='flex flex-col mt-[-320px] overflow-y-scroll mr-[-20px]'>
+        <div className='flex flex-col mt-[-350px]'>
           <div className='mr-[20px]'>
             <div
               role='button'
@@ -48,7 +48,7 @@ export default function Projects() {
                     : activeIndex - 1
                 )
               }
-              className='w-fit mb-4'
+              className='w-fit mb-2'
             >
               <Image
                 src={'/blue-arrow.svg'}
@@ -73,7 +73,7 @@ export default function Projects() {
                 alt='arrow up'
                 height={25}
                 width={18}
-                className='w-fit mt-4 rotate-180'
+                className='w-fit mt-2 rotate-180'
               />
             </div>
           </div>

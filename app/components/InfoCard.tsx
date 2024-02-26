@@ -44,7 +44,7 @@ const InfoCard = ({ content }: InfoCardProps) => {
           </h2>
         </div>
       )}
-      <span className='text-base font-light text-white opacity-50 mb-6'>
+      <span className='text-base font-light text-white opacity-50 mb-4'>
         {dateRange}
       </span>
       <p

@@ -17,13 +17,18 @@ const ConnectedCirclesDescendingScale = ({
 }: CircleContentProps) => {
   const windowWidth = useWindowWidth();
   const windowHeight = useWindowHeight();
+
   return (
     <>
       {windowWidth && windowHeight ? (
         <div
           className={`flex flex-col mr-[-20px] ${
             windowWidth <= breakpoints.desktop ? 'w-[350px]' : 'w-[650px]'
-          } ${windowHeight <= 920 ? 'scale-75 mb-[-90px]' : ''}`}
+          } ${
+            windowHeight <= 920 && windowWidth >= breakpoints.tablet
+              ? 'scale-75 mb-[-90px]'
+              : ''
+          }`}
         >
           <div
             className={`overflow-hidden rounded-full mb-[-4px] ${

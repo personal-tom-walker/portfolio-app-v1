@@ -9,7 +9,6 @@ export const mainContentHome = {
 
 export const mainContentAbout = {
   text: "Hey, here's a bit about me... I've been developing web-based solutions for the commercial world for over 4 years now. Though most the technologies I currently use (and continue to learn) are self-taught, I've had formal training via School of Code (2021). Feel free to explore my experience and past projects :)",
-  isBold: true,
 };
 
 export const infoCardExperience = [
@@ -63,22 +62,6 @@ export const titleContentProjects = {
 };
 
 export const infoCardProjects = [
-  {
-    letter: 'P',
-    company: 'Portfolio',
-    link: '/',
-    dateRange: 'Dec 2023 - Feb 2024',
-    boldText: 'Portfolio site (v1)',
-    normalText: 'Everything you see here! :)',
-    technologies: [
-      technologies.next,
-      technologies.react,
-      technologies.tailwindCSS,
-      technologies.typescript,
-    ],
-    ownDesign: true,
-  },
-
   {
     letter: 'N',
     company: 'Non-Established Company',
@@ -170,5 +153,20 @@ export const infoCardProjects = [
       technologies.css,
       technologies.javascript,
     ],
+  },
+  {
+    letter: 'P',
+    company: 'Portfolio',
+    link: '/',
+    dateRange: 'Dec 2023 - Feb 2024',
+    boldText: 'Portfolio site (v1)',
+    normalText: 'Everything you see here! :)',
+    technologies: [
+      technologies.next,
+      technologies.react,
+      technologies.tailwindCSS,
+      technologies.typescript,
+    ],
+    ownDesign: true,
   },
 ];
