@@ -146,6 +146,7 @@ a {
   color: rgb(var(--light-col));
   border: 1px solid rgb(var(--light-col));
   background-color: rgba(var(--light-col), 0.2);
+  font-size: var(--font-size-xs);
   @apply py-1 px-4 rounded-full w-fit font-normal;
 }
 

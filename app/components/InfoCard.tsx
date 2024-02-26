@@ -68,14 +68,12 @@ const InfoCard = ({ content }: InfoCardProps) => {
           technologies.map((item) => {
             const { name, link, personalLink, brewbrokerLink } = item;
             return (
-              <Link
+              <div
                 key={name}
-                href={link || personalLink || brewbrokerLink || '/'}
-                target='_blank'
                 className='technology-button mb-3 mr-3'
               >
                 <span>{name}</span>
-              </Link>
+              </div>
             );
           })}
         {ownDesign && (
