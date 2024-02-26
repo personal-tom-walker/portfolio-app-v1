@@ -70,7 +70,7 @@ const InfoCard = ({ content }: InfoCardProps) => {
             return (
               <div
                 key={name}
-                className='technology-button mb-3 mr-3'
+                className='technology-button mb-2 mr-2'
               >
                 <span>{name}</span>
               </div>

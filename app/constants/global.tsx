@@ -26,7 +26,7 @@ const TECHNOLOGY_NAMES = {
   REACT: 'React',
   NEXT: 'NextJS',
   REDUX: 'Redux',
-  EXPRESS: 'express',
+  EXPRESS: 'ExpressJS',
   NODEJS: 'NodeJS',
   SQL: 'SQL',
   STRIPE_API: 'StripeAPI',

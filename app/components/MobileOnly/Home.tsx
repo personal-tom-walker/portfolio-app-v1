@@ -20,22 +20,11 @@ const Home = () => {
     about: false,
     experience: false,
   });
-  const [selectedNav, setSelectedNav] = useState<string | null>(null);
 
   const triggerNavClick = (type: string) => {
     setNavClick({ ...navClick, [type]: true });
-    setSelectedNav(type);
+    router.push(`/${type}`);
   };
-
-  useEffect(() => {
-    if (selectedNav) {
-      const routerTimeoutId = setTimeout(() => {
-        router.push(selectedNav !== buttonTypes.home ? `/${selectedNav}` : '/');
-      }, 1000);
-
-      return () => clearTimeout(routerTimeoutId);
-    }
-  }, [selectedNav, router]);
 
   return (
     <>
